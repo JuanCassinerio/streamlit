@@ -4,10 +4,28 @@ streamlit run C:/Users/Usuario/Desktop/dashboard1.py
 
 import streamlit as st
 
-st.write("No trhrtfhected date range.")
+def add_numbers(num1, num2):
+  """Calculates the sum of two numbers.
 
+  Args:
+      num1: The first number.
+      num2: The second number.
 
+  Returns:
+      The sum of num1 and num2.
+  """
+  return num1 + num2
 
+st.title("Simple 2-Number Calculator")
+
+# Get user input for numbers
+num1 = st.number_input("Enter first number:", min_value=float('-inf'), max_value=float('inf'))
+num2 = st.number_input("Enter second number:", min_value=float('-inf'), max_value=float('inf'))
+
+# Calculate and display the sum
+if st.button("Calculate"):
+  result = add_numbers(num1, num2)
+  st.success(f"The sum is: {result}")
 
 
 
