@@ -19,7 +19,8 @@ def add_numbers(num1, num2):
 st.title("Simple 2-Number Calculator")
 
 # Get user input for numbers
-num1 = 1
+num1 = st.number_input("Enter first number:", min_value=float('-inf'), max_value=float('inf'))
+
 
 
 num2 = 2
