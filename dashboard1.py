@@ -1,7 +1,7 @@
 '''
 streamlit run C:/Users/Usuario/Desktop/dashboard1.py
 '''
-
+!pip install yfinance
 import streamlit as st
 
 def add_numbers(num1, num2):
