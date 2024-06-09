@@ -16,7 +16,8 @@ query = "SELECT * FROM `agrired-vtiger`.`vtiger_account`;"
 cursor.execute(query)
 rows = cursor.fetchall()
 vtiger = pd.DataFrame(rows, columns=[i[0] for i in cursor.description]) 
-
+cursor.close()
+connection.close()
 #Procesamiento de Datos
 
 
@@ -25,8 +26,7 @@ vtiger = pd.DataFrame(rows, columns=[i[0] for i in cursor.description])
 st.title("Tablero Empresas")
 st.dataframe(vtiger)
 
-cursor.close()
-connection.close()
+
 
 
 
