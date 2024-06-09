@@ -10,6 +10,7 @@ from datetime import datetime
 from datetime import date
 from collections.abc import Iterable
 
+
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     # Rest of your Streamlit app code
