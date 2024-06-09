@@ -46,7 +46,7 @@ st.write("This dashboard displays information about Apple (AAPL) stock.")
 if data is not None:
     # Create a Plotly figure
     fig = go.Figure(data=[go.Scatter(x=data.index, y=data['Close'])])
-    fig.update_layout(title='AAPL Stock Price', xaxis_title='Date', yaxis_title='Price')
+    fig.update_layout(title='AAPL Stock Price', xaxis_title='Date', yaxis_title='Price - chotocorta')
     st.plotly_chart(fig)  # Display the chart
 else:
     st.write("No data available for the selected date range.")
