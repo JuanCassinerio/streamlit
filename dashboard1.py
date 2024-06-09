@@ -1,20 +1,12 @@
-
 import streamlit as st
 from yfinance import Ticker 
-
 import warnings
-
 from datetime import datetime
 from datetime import date
-
-
-
+import plotly.graph_objects as go  
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
-    # Rest of your Streamlit app code
 
-
-# Function to fetch AAPL data from Yahoo Finance for a specific date range
 def fetch_aapl_data(start_date, end_date):
   aapl = Ticker("AAPL")  # Create a Ticker object for AAPL
   # Download historical data (adjust period as needed)
@@ -52,13 +44,16 @@ st.write("This dashboard displays information about Apple (AAPL) stock.")
 
 # Display the fetched data (assuming data is a pandas DataFrame)
 if data is not None:
-  st.dataframe(data)
+    # Create a Plotly figure
+    fig = go.Figure(data=[go.Scatter(x=data.index, y=data['Close'])])
+    fig.update_layout(title='AAPL Stock Price', xaxis_title='Date', yaxis_title='Price')
+    st.plotly_chart(fig)  # Display the chart
 else:
-  st.write("No data available for the selected date range.")
+    st.write("No data available for the selected date range.")
 
 # Button to refresh data (optional)
 if st.button("Refresh Data"):
-  data = fetch_aapl_data(start_date, end_date)  # Refetch data
+    data = fetch_aapl_data(start_date, end_date)  # Refetch data
 
 
 
