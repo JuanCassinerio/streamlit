@@ -1,7 +1,6 @@
 '''
 streamlit run C:/Users/Usuario/Desktop/dashboard1.py
 '''
-!pip install yfinance
 
 import streamlit as st
 from yfinance import Ticker  # Import yfinance for fetching data
