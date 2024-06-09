@@ -5,8 +5,10 @@ streamlit run C:/Users/Usuario/Desktop/dashboard1.py
 import streamlit as st
 from yfinance import Ticker  # Import yfinance for fetching data
 import warnings
+
 from datetime import datetime
 from datetime import date
+from collections.abc import Iterable
 
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
