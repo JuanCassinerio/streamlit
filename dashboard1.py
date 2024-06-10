@@ -5,7 +5,7 @@ from datetime import datetime
 from datetime import date
 import requests 
 
-def dolar(start_date, end_date):
+def dolar(start_date_date, end_date):
   url="https://api.argentinadatos.com/v1/cotizaciones/dolares"
   headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"}
   data = requests.get(url, headers=headers, verify=False).json()
@@ -48,8 +48,10 @@ def dolar(start_date, end_date):
   data['fecha'] = pd.to_datetime(data['fecha'])
   data.drop_duplicates
   
-  filtered_df = data[data['fecha'].dt.date >= start_date]
+  
+  filtered_df = data[data['fecha'].dt.date >= start_date_date]
   filtered_df = filtered_df[filtered_df['fecha'].dt.date <= today]
+  
 
   return filtered_df
 
@@ -61,9 +63,10 @@ def dolar(start_date, end_date):
 #GUI
 st.title("Tablero Empresas")
 
-today = date.today().strftime("%Y-%m-%d")
+today = date.today()
 start_date = "2024-01-01"
-end_date = today
+start_date_date = pd.to_datetime(start_date).date()
+
 
 st.sidebar.title("Date Filter") # Create a sidebar for user input
 date_format = "%Y-%m-%d"  # Adjust format if needed
@@ -73,7 +76,7 @@ new_start_date = st.sidebar.date_input("Start Date", value=start_date_obj)
 new_end_date = st.sidebar.date_input("End Date", value=end_date_obj)
 
 
-data = dolar(start_date, end_date)  # Initialize data as None
+data = dolar(start_date_date, end_date)  # Initialize data as None
 # Button to apply changes and refetch data
 if st.sidebar.button("Apply deherChanges"):
   # Update data based on user input
@@ -86,13 +89,3 @@ chosen = st.radio('Sorting hat',("blue", "mayorista", "oficial", "contadoconliqu
 fig = go.Figure(filtered_df, x='fecha', y=chosen)
 fig.update_layout(title=dict(text=f'Dolar {chosen} ',x=0.5,xanchor='center',font=dict(color="blue", size=14)))
 st.plotly_chart(fig)
-
-
-
-
-
-
-
-
-
-
