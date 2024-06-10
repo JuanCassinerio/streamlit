@@ -69,9 +69,9 @@ chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contado
 with st.spinner("Fetching data..."):
   # Silence Streamlit info messages
   with st.report_cx.info(""):
-    dolar_data = dolar(new_start_date, new_end_date)
+    dolar = dolar(new_start_date, new_end_date)
   # Remove duplicates
-  dolar_data = dolar_data.drop_duplicates()
+  dolar = dolar.drop_duplicates()
 
 
 fig = px.line(dolar, x='fecha', y=chosen)
