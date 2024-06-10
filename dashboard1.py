@@ -72,13 +72,8 @@ st.header("Date Range Selection")
 date_format = "%Y-%m-%d"  # Date format for display
 
 # Sidebar for user input
-with st.sidebar:
-    # Date input fields
-    new_start_date = st.date_input("Start Date", value=start_date0)
-    new_end_date = st.date_input("End Date", value=end_date)
 
-    # Slider for date range selection (optional)
-    add_slider = st.slider("Select a Range", start_date0, end_date, (new_start_date, new_end_date))  # Adjust slider behavior
+st.slider("Select a Date Range", start_date0, end_date, (new_start_date, new_end_date), key="date_range_slider")
 
 # Update data based on user selection
 if new_start_date <= new_end_date:  # Ensure valid date range
