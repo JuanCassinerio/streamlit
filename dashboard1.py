@@ -54,8 +54,8 @@ def dolar(start_date_date, end_date):
 
 #GUI
 st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
-st.markdown("Cotizacion en vivo e historica del dolar. Fuentes: dolarapi.com / argentinadatos.com .", unsafe_allow_html=True)
-st.markdown("Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://juancassinerio.wixsite.com/finance/</a> . ", unsafe_allow_html=True)
+st.markdown("Cotizacion en vivo e historica del dolar. Fuentes: dolarapi.com / argentinadatos.com", unsafe_allow_html=True)
+st.markdown("Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://juancassinerio.wixsite.com/finance/</a>", unsafe_allow_html=True)
 
 chosen ='contadoconliqui'
 start_date0 = pd.to_datetime("2024-01-03").date()
@@ -68,6 +68,7 @@ chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contado
 
 with st.spinner("Fetching data..."):  
     dolar = dolar(new_start_date, new_end_date)  
+    dolar = dolar.drop_duplicates()
 
 fig = px.line(dolar, x='fecha', y=chosen)
 fig.update_layout(title=dict(text=f'Dolar {chosen}',x=0.5,xanchor='center',font=dict(color="black", size=14)))
