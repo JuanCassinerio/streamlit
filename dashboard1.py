@@ -68,8 +68,6 @@ chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contado
 
 with st.spinner("Fetching data..."): 
     dolar = dolar(new_start_date, new_end_date)
-    dolar = dolar.drop_duplicates(subset='fecha', keep='first'), dolar = dolar(new_start_date, new_end_date)
-
 
 fig = px.line(dolar, x='fecha', y=chosen)
 fig.update_layout(title=dict(text=f'Dolar {chosen}',x=0.5,xanchor='center',font=dict(color="black", size=14)))
