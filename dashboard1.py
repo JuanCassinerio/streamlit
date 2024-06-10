@@ -67,9 +67,8 @@ new_start_date, new_end_date = st.slider("Fecha", start_date0, end_date, (start_
 chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
 
 with st.spinner("Fetching data..."):
-    st._report_msg(st.ReportType.INFO, "")
+    
     dolar = dolar(new_start_date, new_end_date)
-
 
 fig = px.line(dolar, x='fecha', y=chosen)
 fig.update_layout(title=dict(text=f'Dolar {chosen} - {new_start_date}/{new_end_date}',x=0.5,xanchor='center',font=dict(color="black", size=14)))
