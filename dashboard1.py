@@ -73,7 +73,7 @@ date_format = "%Y-%m-%d"  # Date format for display
 
 # Sidebar for user input
 
-st.slider("Select a Date Range", start_date0, end_date, (new_start_date, new_end_date), key="date_range_slider")
+new_start_date, new_end_date = st.slider("Select a Date Range", start_date0, end_date, (start_date0, end_date))
 
 # Update data based on user selection
 if new_start_date <= new_end_date:  # Ensure valid date range
