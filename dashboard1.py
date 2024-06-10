@@ -14,7 +14,7 @@ def dolar(start_date, end_date):
   data = data[['fecha','precio','casa']]
   casa_values = data['casa'].unique()  # Get unique casa values
   for casa in casa_values:
-  data[f'{casa}'] = data[data['casa'] == casa]['precio']
+    data[f'{casa}'] = data[data['casa'] == casa]['precio']
   data.drop(['casa','precio','solidario'], axis=1, inplace=True)
   def fill_missing_by_fecha(df):
   return pd.concat([df[['fecha']], df.groupby('fecha').transform(lambda x: x.fillna(method='ffill'))], axis=1)
@@ -31,7 +31,7 @@ def dolar(start_date, end_date):
   data = data[['fechaActualizacion','precio','casa']]
   casa_values = data['casa'].unique()  # Get unique casa values
   for casa in casa_values:
-  data[f'{casa}'] = data[data['casa'] == casa]['precio']
+    data[f'{casa}'] = data[data['casa'] == casa]['precio']
   data.drop(['casa','precio'], axis=1, inplace=True)
   def fill_missing_by_fecha(df):
   return pd.concat([df[['fechaActualizacion']], df.groupby('fechaActualizacion').transform(lambda x: x.fillna(method='ffill'))], axis=1)
