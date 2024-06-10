@@ -50,34 +50,20 @@ def dolar(start_date_date, end_date):
   
   filtered_df = data[data['fecha'].dt.date >= start_date_date]
   filtered_df = filtered_df[filtered_df['fecha'].dt.date <= end_date]
-  
-
   return filtered_df
-
-
-
 
 #GUI
 st.title("Tablero Empresas")
 
-
+chosen ='contadoconliqui'
 start_date0 = pd.to_datetime("2011-01-03").date()
 end_date=date.today()
 start_date1 = pd.to_datetime("2024-01-01").date()
 
-
-
 data = dolar(start_date1, end_date)  # Initialize data as None
-st.header("Date Range Selection")
-date_format = "%Y-%m-%d"  # Date format for display
 
-# Sidebar for user input
-
-new_start_date, new_end_date = st.slider("Select a Date Range", start_date0, end_date, (start_date0, end_date))
-
-
-chosen ='contadoconliqui'
-chosen = st.radio('Sorting hat',("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto")) #visible filtro selecion individual contadoconliqui
+new_start_date, new_end_date = st.slider("Fecha", start_date0, end_date, (start_date0, end_date))
+chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
 
 fig = px.line(data, x='fecha', y=chosen)
 fig.update_layout(title=dict(text=f'Dolar {chosen} - <a href="https://juancassinerio.wixsite.com/finance">www.juancassinerio.wixsite.com/finance</a>',x=0.5,xanchor='center',font=dict(color="blue", size=14)))
