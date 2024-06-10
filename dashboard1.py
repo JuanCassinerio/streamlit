@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-import plotly.graph_objects as go  
-
+import plotly.express as px
 from datetime import date
 import requests 
 
@@ -58,8 +57,6 @@ def dolar(start_date_date, end_date):
 
 
 
-
-
 #GUI
 st.title("Tablero Empresas")
 
@@ -83,14 +80,12 @@ if st.sidebar.button("Apply deherChanges"):
   end_date = new_end_date
   data = dolar(start_date, end_date)  # Refetch data
 
-chosen ='contadoconliqui'
-chosen = st.radio('Sorting hat',("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto")) #visible filtro selecion individual contadoconliqui
-fig = go.Figure(data, x='fecha', y=chosen)
-fig.update_layout(title=dict(text=f'Dolar {chosen} ',x=0.5,xanchor='center',font=dict(color="blue", size=14)))
-st.plotly_chart(fig)
 
 chosen ='contadoconliqui'
 chosen = st.radio('Sorting hat',("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto")) #visible filtro selecion individual contadoconliqui
-fig = go.Figure(filtered_df, x='fecha', y=chosen)
-fig.update_layout(title=dict(text=f'Dolar {chosen} ',x=0.5,xanchor='center',font=dict(color="blue", size=14)))
+
+fig = px.line(data, x='fecha', y=chosen)
+fig.update_layout(title=dict(text=f'Dolar {dolar} - <a href="https://juancassinerio.wixsite.com/finance">www.juancassinerio.wixsite.com/finance</a>',x=0.5,xanchor='center',font=dict(color="blue", size=14)))
+fig.show()
+
 st.plotly_chart(fig)
