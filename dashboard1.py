@@ -48,7 +48,7 @@ def dolar(start_date, end_date):
   data['fecha'] = pd.to_datetime(data['fecha'])
   data.drop_duplicates
   
-  filtered_df = data[data['fecha'].dt.date >= start_date_date]
+  filtered_df = data[data['fecha'].dt.date >= start_date]
   filtered_df = filtered_df[filtered_df['fecha'].dt.date <= today]
 
   return filtered_df
