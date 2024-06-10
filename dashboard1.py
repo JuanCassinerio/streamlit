@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go  
-from datetime import datetime
+
 from datetime import date
 import requests 
 
@@ -50,7 +50,7 @@ def dolar(start_date_date, end_date):
   
   
   filtered_df = data[data['fecha'].dt.date >= start_date_date]
-  filtered_df = filtered_df[filtered_df['fecha'].dt.date <= today]
+  filtered_df = filtered_df[filtered_df['fecha'].dt.date <= end_date]
   
 
   return filtered_df
@@ -65,24 +65,29 @@ st.title("Tablero Empresas")
 
 today = date.today()
 start_date = "2024-01-01"
-start_date_date = pd.to_datetime(start_date).date()
-
+start_date = pd.to_datetime(start_date).date()
+end_date=today
 
 st.sidebar.title("Date Filter") # Create a sidebar for user input
 date_format = "%Y-%m-%d"  # Adjust format if needed
-start_date_obj = datetime.strptime(start_date, date_format)
-end_date_obj = datetime.strptime(end_date, date_format)
-new_start_date = st.sidebar.date_input("Start Date", value=start_date_obj)
-new_end_date = st.sidebar.date_input("End Date", value=end_date_obj)
+
+new_start_date = st.sidebar.date_input("Start Date", value=start_date)
+new_end_date = st.sidebar.date_input("End Date", value=end_date)
 
 
-data = dolar(start_date_date, end_date)  # Initialize data as None
+data = dolar(start_date, end_date)  # Initialize data as None
 # Button to apply changes and refetch data
 if st.sidebar.button("Apply deherChanges"):
   # Update data based on user input
   start_date = new_start_date
   end_date = new_end_date
   data = dolar(start_date, end_date)  # Refetch data
+
+chosen ='contadoconliqui'
+chosen = st.radio('Sorting hat',("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto")) #visible filtro selecion individual contadoconliqui
+fig = go.Figure(data, x='fecha', y=chosen)
+fig.update_layout(title=dict(text=f'Dolar {chosen} ',x=0.5,xanchor='center',font=dict(color="blue", size=14)))
+st.plotly_chart(fig)
 
 chosen ='contadoconliqui'
 chosen = st.radio('Sorting hat',("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto")) #visible filtro selecion individual contadoconliqui
