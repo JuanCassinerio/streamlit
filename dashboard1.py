@@ -85,7 +85,5 @@ chosen ='contadoconliqui'
 chosen = st.radio('Sorting hat',("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto")) #visible filtro selecion individual contadoconliqui
 
 fig = px.line(data, x='fecha', y=chosen)
-fig.update_layout(title=dict(text=f'Dolar {dolar} - <a href="https://juancassinerio.wixsite.com/finance">www.juancassinerio.wixsite.com/finance</a>',x=0.5,xanchor='center',font=dict(color="blue", size=14)))
-fig.show()
-
+fig.update_layout(title=dict(text=f'Dolar {chosen} - <a href="https://juancassinerio.wixsite.com/finance">www.juancassinerio.wixsite.com/finance</a>',x=0.5,xanchor='center',font=dict(color="blue", size=14)))
 st.plotly_chart(fig)
