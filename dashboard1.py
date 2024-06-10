@@ -66,9 +66,13 @@ start_date1 = pd.to_datetime("2024-05-01").date()
 new_start_date, new_end_date = st.slider("Fecha", start_date0, end_date, (start_date1, end_date))
 chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
 
-with st.spinner("Fetching data..."):  
-    dolar = dolar(new_start_date, new_end_date)  
-    dolar = dolar.drop_duplicates()
+with st.spinner("Fetching data..."):
+  # Silence Streamlit info messages
+  with st.report_cx.info(""):
+    dolar_data = dolar(new_start_date, new_end_date)
+  # Remove duplicates
+  dolar_data = dolar_data.drop_duplicates()
+
 
 fig = px.line(dolar, x='fecha', y=chosen)
 fig.update_layout(title=dict(text=f'Dolar {chosen} - {new_start_date}/{new_end_date}',x=0.5,xanchor='center',font=dict(color="black", size=14)))
