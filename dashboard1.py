@@ -17,7 +17,7 @@ def dolar(start_date, end_date):
     data[f'{casa}'] = data[data['casa'] == casa]['precio']
   data.drop(['casa','precio','solidario'], axis=1, inplace=True)
   def fill_missing_by_fecha(df):
-  return pd.concat([df[['fecha']], df.groupby('fecha').transform(lambda x: x.fillna(method='ffill'))], axis=1)
+    return pd.concat([df[['fecha']], df.groupby('fecha').transform(lambda x: x.fillna(method='ffill'))], axis=1)
   data1 = fill_missing_by_fecha(data.copy())  # Avoid modifying original data
   data1.sort_index(ascending=False, inplace=True)  # Sort DataFrame by index in descending order
   data1.drop_duplicates(subset='fecha', keep='first', inplace=True)  # Keep the first occurrence of each unique 'fecha'
@@ -34,7 +34,7 @@ def dolar(start_date, end_date):
     data[f'{casa}'] = data[data['casa'] == casa]['precio']
   data.drop(['casa','precio'], axis=1, inplace=True)
   def fill_missing_by_fecha(df):
-  return pd.concat([df[['fechaActualizacion']], df.groupby('fechaActualizacion').transform(lambda x: x.fillna(method='ffill'))], axis=1)
+    return pd.concat([df[['fechaActualizacion']], df.groupby('fechaActualizacion').transform(lambda x: x.fillna(method='ffill'))], axis=1)
   data2 = fill_missing_by_fecha(data.copy())  # Avoid modifying original data
   data2.sort_index(ascending=False, inplace=True)  # Sort DataFrame by index in descending order
   data2.drop_duplicates(subset='fechaActualizacion', keep='first', inplace=True)  # Keep the first occurrence of each unique 'fecha'
@@ -50,6 +50,9 @@ def dolar(start_date, end_date):
   
   filtered_df = data[data['fecha'].dt.date >= start_date_date]
   filtered_df = filtered_df[filtered_df['fecha'].dt.date <= today]
+
+  return filtered_df
+
 
 
 
