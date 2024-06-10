@@ -75,16 +75,6 @@ date_format = "%Y-%m-%d"  # Date format for display
 
 new_start_date, new_end_date = st.slider("Select a Date Range", start_date0, end_date, (start_date0, end_date))
 
-# Update data based on user selection
-if new_start_date <= new_end_date:  # Ensure valid date range
-    start_date = new_start_date
-    end_date = new_end_date
-    data = dolar(start_date, end_date)  # Fetch data based on updated dates
-    st.write("Fetched Data:")
-    st.dataframe(data)  # Display fetched data
-else:
-    st.error("Invalid Date Range: Start date must be before end date.") 
-
 
 chosen ='contadoconliqui'
 chosen = st.radio('Sorting hat',("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto")) #visible filtro selecion individual contadoconliqui
