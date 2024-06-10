@@ -66,7 +66,7 @@ start_date1 = pd.to_datetime("2024-05-01").date()
 new_start_date, new_end_date = st.slider("Fecha", start_date0, end_date, (start_date1, end_date))
 chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
 
-with st.spinner("Fetching data..."): # Display spinner while fetching data
+with st.spinner("Fetching data..."): 
   dolar = dolar(new_start_date, new_end_date)
   dolar = dolar.drop_duplicates(subset='fecha', keep='first'), dolar = dolar(new_start_date, new_end_date)
 
