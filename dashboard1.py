@@ -60,25 +60,35 @@ def dolar(start_date_date, end_date):
 #GUI
 st.title("Tablero Empresas")
 
-today = date.today()
-start_date = "2024-01-01"
-start_date = pd.to_datetime(start_date).date()
-end_date=today
 
-st.sidebar.title("Date Filter") # Create a sidebar for user input
-date_format = "%Y-%m-%d"  # Adjust format if needed
-
-new_start_date = st.sidebar.date_input("Start Date", value=start_date)
-new_end_date = st.sidebar.date_input("End Date", value=end_date)
+start_date0 = pd.to_datetime("2011-01-03").date()
+end_date=date.today()
+start_date1 = pd.to_datetime("2024-01-01").date()
 
 
-data = dolar(start_date, end_date)  # Initialize data as None
-# Button to apply changes and refetch data
-if st.sidebar.button("Apply deherChanges"):
-  # Update data based on user input
-  start_date = new_start_date
-  end_date = new_end_date
-  data = dolar(start_date, end_date)  # Refetch data
+
+data = dolar(start_date1, end_date)  # Initialize data as None
+st.header("Date Range Selection")
+date_format = "%Y-%m-%d"  # Date format for display
+
+# Sidebar for user input
+with st.sidebar:
+    # Date input fields
+    new_start_date = st.date_input("Start Date", value=start_date0)
+    new_end_date = st.date_input("End Date", value=end_date)
+
+    # Slider for date range selection (optional)
+    add_slider = st.slider("Select a Range", start_date0, end_date, (new_start_date, new_end_date))  # Adjust slider behavior
+
+# Update data based on user selection
+if new_start_date <= new_end_date:  # Ensure valid date range
+    start_date = new_start_date
+    end_date = new_end_date
+    data = dolar(start_date, end_date)  # Fetch data based on updated dates
+    st.write("Fetched Data:")
+    st.dataframe(data)  # Display fetched data
+else:
+    st.error("Invalid Date Range: Start date must be before end date.") 
 
 
 chosen ='contadoconliqui'
