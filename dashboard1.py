@@ -50,6 +50,7 @@ def dolar(start_date_date, end_date):
   
   filtered_df = data[data['fecha'].dt.date >= start_date_date]
   filtered_df = filtered_df[filtered_df['fecha'].dt.date <= end_date]
+  filtered_df = drop_duplicates
   return filtered_df
 
 #GUI
@@ -65,6 +66,9 @@ start_date1 = pd.to_datetime("2024-05-01").date()
 
 new_start_date, new_end_date = st.slider("Fecha", start_date0, end_date, (start_date1, end_date))
 chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
+
+with st.spinner("Fetching data..."):  # Display spinner while fetching data
+    dolar=dolar(new_start_date, new_end_date)
 
 fig = px.line(dolar(new_start_date, new_end_date), x='fecha', y=chosen)
 fig.update_layout(title=dict(text=f'Dolar {chosen}',x=0.5,xanchor='center',font=dict(color="black", size=14)))
