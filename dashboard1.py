@@ -55,10 +55,16 @@ def dolar(start_date_date, end_date):
 #GUI
 st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
 st.markdown("Cotizacion en vivo e historica del dolar. Fuentes: <a href='https://dolarapi.com'>https://dolarapi.com/</a> y <a href='https://argentinadatos.com/'>https://argentinadatos.com/</a>", unsafe_allow_html=True)
-st.markdown("Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://juancassinerio.wixsite.com/finance/</a>. Desarrollo de Algoritmos Financieros", unsafe_allow_html=True)
+st.markdown("Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://juancassinerio.wixsite.com/finance/</a>. ", unsafe_allow_html=True)
 
 chosen ='contadoconliqui'
 start_date0 = pd.to_datetime("2011-01-03").date()
 end_date=date.today()
 start_date1 = pd.to_datetime("2024-01-01").date()
+
+
+new_start_date, new_end_date = st.slider("Fecha", start_date0, end_date, (start_date1, end_date))
+chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
+
+
 
