@@ -58,15 +58,17 @@ st.markdown("Cotizacion en vivo e historica del dolar. Fuentes: <a href='https:/
 st.markdown("Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://juancassinerio.wixsite.com/finance/</a>. ", unsafe_allow_html=True)
 
 chosen ='contadoconliqui'
-start_date0 = pd.to_datetime("2011-01-03").date()
+start_date0 = pd.to_datetime("2024-01-03").date()
 end_date=date.today()
-start_date1 = pd.to_datetime("2024-01-01").date()
+start_date1 = pd.to_datetime("2024-05-01").date()
 
 
-new_start_date, new_end_date = st.slider("Fecha", start_date1, end_date, (start_date1, end_date))
+new_start_date, new_end_date = st.slider("Fecha", start_date0, end_date, (start_date1, end_date))
 chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
 
-dolar=dolar(new_start_date, new_end_date)
+with st.spinner("Fetching data..."):  # Display spinner while fetching data
+    dolar=dolar(new_start_date, new_end_date)
+
 
 fig = px.line(dolar, x='fecha', y=chosen)
 fig.update_layout(title=dict(text=f'Dolar {chosen}',x=0.5,xanchor='center',font=dict(color="black", size=14)))
