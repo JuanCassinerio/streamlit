@@ -50,7 +50,6 @@ def dolar(start_date_date, end_date):
   
   filtered_df = data[data['fecha'].dt.date >= start_date_date]
   filtered_df = filtered_df[filtered_df['fecha'].dt.date <= end_date]
-  filtered_df = filtered_df.drop_duplicates
   return filtered_df
 
 #GUI
