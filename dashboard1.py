@@ -53,4 +53,18 @@ def dolar(start_date_date, end_date):
   return filtered_df
 
 #GUI
+st.title("Tablero Empresas")
 
+chosen ='contadoconliqui'
+start_date0 = pd.to_datetime("2011-01-03").date()
+end_date=date.today()
+start_date1 = pd.to_datetime("2024-01-01").date()
+
+dolar(start_date1, end_date)  # Initialize data as None
+
+new_start_date, new_end_date = st.slider("Fecha", start_date1, end_date, (start_date0, end_date))
+chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
+
+fig = px.line(data, x='fecha', y=chosen)
+fig.update_layout(title=dict(text=f'Dolar {chosen} - <a href="https://juancassinerio.wixsite.com/finance">www.juancassinerio.wixsite.com/finance</a>',x=0.5,xanchor='center',font=dict(color="blue", size=14)))
+st.plotly_chart(fig)
