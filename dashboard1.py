@@ -53,9 +53,8 @@ def dolar(start_date_date, end_date):
   return filtered_df
 
 #GUI
-st.title("Tablero Empresas")
-st.markdown("<h2 style='text-align: center; color: blue;'>Cotizacion de los diferentes dolares a tiempo real.</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'></a>. Desarrollo de Algoritmos financieros. Procesamiento y Desarrollo de modelos econometricos</p>", unsafe_allow_html=True)
+st.title("Cotizacion de los diferentes dolares a tiempo real",color=blue)
+st.markdown("<p style='text-align: center;'>Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://juancassinerio.wixsite.com/finance/</a>. Desarrollo de Algoritmos financieros. Procesamiento y Desarrollo de modelos econometricos</p>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Fuentes: <a href='https://dolarapi.com'>https://dolarapi.com/</a> y <a href='https://argentinadatos.com/'>https://argentinadatos.com/</a></p>", unsafe_allow_html=True)
 
 chosen ='contadoconliqui'
@@ -66,7 +65,5 @@ start_date1 = pd.to_datetime("2024-01-01").date()
 new_start_date, new_end_date = st.slider("Fecha", start_date0, end_date, (start_date1, end_date))
 chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
 
-with st.spinner("Fetching data..."):  # Display spinner while fetching data
-    dolar=dolar(new_start_date, new_end_date)
 
 
