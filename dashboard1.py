@@ -69,6 +69,6 @@ chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contado
 with st.spinner("Fetching data..."):  # Display spinner while fetching data
     dolar=dolar(new_start_date, new_end_date)
 
-fig = px.line(dolar(new_start_date, new_end_date), x='fecha', y=chosen)
+fig = px.line(dolar, x='fecha', y=chosen)
 fig.update_layout(title=dict(text=f'Dolar {chosen}',x=0.5,xanchor='center',font=dict(color="black", size=14)))
 st.plotly_chart(fig)
