@@ -71,5 +71,5 @@ with st.spinner("Fetching data..."):
     dolar = dolar.drop_duplicates()
 
 fig = px.line(dolar, x='fecha', y=chosen)
-fig.update_layout(title=dict(text=f'Dolar {chosen}',x=0.5,xanchor='center',font=dict(color="black", size=14)))
+fig.update_layout(title=dict(text=f'Dolar {chosen} {new_start_date}-{new_end_date}',x=0.5,xanchor='center',font=dict(color="black", size=14)))
 st.plotly_chart(fig)
