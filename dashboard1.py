@@ -54,9 +54,9 @@ def dolar(start_date_date, end_date):
 
 #GUI
 st.title("Tablero Empresas")
-st.markdown("<h1 style='text-align: center; color: blue;'>Cotizacion de los diferentes dolares a tiempo real.</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://www.infobae.com/leamos/2023/01/03/como-funciona-la-economia-moderna-segun-uno-de-los-primeros-algoritmos-financieros/</a>. Desarrollo de Algoritmos financieros. Procesamiento y Desarrollo de modelos econometricos</p>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center;'>Fuentes: <a href='https://dolarapi.com'>https://dolarapi.com/</a> <a href='https://argentinadatos.com/'>https://argentinadatos.com/</a></p>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center; color: blue;'>Cotizacion de los diferentes dolares a tiempo real.</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'></a>. Desarrollo de Algoritmos financieros. Procesamiento y Desarrollo de modelos econometricos</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center;'>Fuentes: <a href='https://dolarapi.com'>https://dolarapi.com/</a> y <a href='https://argentinadatos.com/'>https://argentinadatos.com/</a></p>", unsafe_allow_html=True)
 
 chosen ='contadoconliqui'
 start_date0 = pd.to_datetime("2011-01-03").date()
@@ -69,6 +69,4 @@ chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contado
 with st.spinner("Fetching data..."):  # Display spinner while fetching data
     dolar=dolar(new_start_date, new_end_date)
 
-fig = px.line(dolar, x='fecha', y=chosen)
-fig.update_layout(title=dict(text=f'Dolar {chosen}',x=0.5,xanchor='center',font=dict(color="blue", size=14)))
-st.plotly_chart(fig)
+
