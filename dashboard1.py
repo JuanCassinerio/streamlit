@@ -53,7 +53,11 @@ def dolar(start_date_date, end_date):
   return filtered_df
 
 #GUI
-st.markdown(''':red[Cotizacion de los diferentes dolares a tiempo real].''')
+st.markdown(
+    '''<h1 style="color: blue; font-size: 40px; font-weight: bold;">Cotizacion de los diferentes dolares a tiempo real</h1>''',
+    unsafe_allow_html=True,
+)
+st.markdown(''':blue[Cotizacion de los diferentes dolares a tiempo real].''')
 st.markdown("Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://juancassinerio.wixsite.com/finance/</a>. Desarrollo de Algoritmos financieros. Procesamiento y Desarrollo de modelos econometricos", unsafe_allow_html=True)
 st.markdown("Fuentes: <a href='https://dolarapi.com'>https://dolarapi.com/</a> y <a href='https://argentinadatos.com/'>https://argentinadatos.com/</a>", unsafe_allow_html=True)
 
