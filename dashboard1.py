@@ -53,7 +53,12 @@ def dolar(start_date_date, end_date):
   return filtered_df
 
 #GUI
-st.markdown('''<h1 style="color: grey; font-size: 30px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True,)
-st.markdown("Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://juancassinerio.wixsite.com/finance/</a>. Desarrollo de Algoritmos financieros. Procesamiento y Desarrollo de modelos econometricos", unsafe_allow_html=True)
+st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
 st.markdown("Cotizacion en vivo e historica del dolar. Fuentes: <a href='https://dolarapi.com'>https://dolarapi.com/</a> y <a href='https://argentinadatos.com/'>https://argentinadatos.com/</a>", unsafe_allow_html=True)
+st.markdown("Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://juancassinerio.wixsite.com/finance/</a>. Desarrollo de Algoritmos Financieros", unsafe_allow_html=True)
+
+chosen ='contadoconliqui'
+start_date0 = pd.to_datetime("2011-01-03").date()
+end_date=date.today()
+start_date1 = pd.to_datetime("2024-01-01").date()
 
