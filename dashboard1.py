@@ -46,7 +46,7 @@ def dolar(start_date_date, end_date):
   
   data = pd.concat([data1, data2], ignore_index=True)
   data['fecha'] = pd.to_datetime(data['fecha'])
-  data.drop_duplicates
+  
   
   
   filtered_df = data[data['fecha'].dt.date >= start_date_date]
