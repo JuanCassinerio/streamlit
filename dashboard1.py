@@ -56,9 +56,9 @@ def dolar(start_date_date, end_date):
 st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
 st.markdown("Cotizacion en vivo e historica del dolar. Fuentes: dolarapi.com / argentinadatos.com", unsafe_allow_html=True)
 st.markdown("Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://juancassinerio.wixsite.com/finance/</a>", unsafe_allow_html=True)
+if 'chosen' not in st.session_state:
+    st.session_state['chosen'] = 'contadoconliqui'
 
-chosen ='contadoconliqui'
-print(chosen)
 start_date0 = pd.to_datetime("2024-01-03").date()
 end_date=date.today()
 start_date1 = end_date - timedelta(days=30 * 3)  #4 months
