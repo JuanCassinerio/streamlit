@@ -1,9 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from datetime import date
 import requests  # streamlit run "C:/Users/Usuario/Desktop/Scripts/Nueva carpeta/dark box/st.py" ""to deal with folders with spaces
-
+from datetime import date, timedelta
 
 def dolar(start_date_date, end_date):
   url="https://api.argentinadatos.com/v1/cotizaciones/dolares"
