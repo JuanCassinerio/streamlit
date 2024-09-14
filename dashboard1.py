@@ -65,33 +65,21 @@ start_date1 = end_date - timedelta(days=30 * 3)  #4 months
 
 new_start_date, new_end_date = st.slider("Fecha",start_date0, end_date,  (start_date1, end_date))
 
-
-
-
-
-
 opciones_dolar = {
-    "blue": "Dólar Blue",
-    "mayorista": "Dólar Mayorista",
-    "oficial": "Dólar Oficial",
-    "contadoconliqui": "Dólar Contado con Liquidación",
-    "bolsa": "Dólar Bolsa",
-    "tarjeta": "Dólar Tarjeta",
-    "cripto": "Dólar Cripto"
+    "blue": "Blue",
+    "mayorista": "Mayorista",
+    "oficial": "Oficial",
+    "contadoconliqui": "CCL",
+    "bolsa": "Bolsa",
+    "tarjeta": "Tarjeta",
+    "cripto": "Cripto"
 }
-#chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
 
 # Crear el radio button utilizando los nuevos nombres
 chosen = st.radio("Seleccionar Dolar", tuple(opciones_dolar.values()), horizontal=True, key="sorting_hat_radio")
 
 # Obtener el valor original (clave) a partir del valor seleccionado (valor)
 chosen = [clave for clave, valor in opciones_dolar.items() if valor == chosen][0]
-
-
-
-
-
-
 
 with st.spinner("Fetching data..."):
     dolar = dolar(new_start_date, new_end_date)
