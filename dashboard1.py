@@ -92,7 +92,11 @@ fig.update_layout(
         xanchor='center', 
         font=dict(color="black", size=14)
     ),
-    yaxis_title="[$]",  # Setting the y-axis title as [$]
+    yaxis=dict(
+        title="[$]",  # Setting the y-axis title as [$]
+        title_standoff=20,  # Adjusts the distance between the title and the axis
+        titlefont=dict(size=12),  # Set font size for better visibility
+        tickprefix='$',
     xaxis_title=None,   # Removing x-axis title
 )
 
