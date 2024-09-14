@@ -92,10 +92,16 @@ fig.update_layout(
         xanchor='center', 
         font=dict(color="black", size=14)
     ),
-    yaxis_title="[$]",
-    xaxis_title=None,   # Removing x-axis title
+    yaxis=dict(
+        title="[$]",  # Setting the y-axis title as [$]
+        title_standoff=20,  # Adjusts the distance between the title and the axis
+        titlefont=dict(size=12),  # Set font size for better visibility
+        tickprefix='$',  # Add a $ prefix to the y-axis values
+    ),
+    xaxis_title=None,  # Removing x-axis title
 )
+
+# Rotating the y-axis title horizontally (by setting angle to 0)
 fig.update_yaxes(title_text="[$]", title_font=dict(size=14), title_angle=0)
-# Display the chart in Streamlit
 st.plotly_chart(fig)
 
