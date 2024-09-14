@@ -64,7 +64,6 @@ start_date1 = end_date - timedelta(days=30 * 3)  #4 months
 
 
 new_start_date, new_end_date = st.slider("Fecha",start_date0, end_date,  (start_date1, end_date))
-chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
 
 
 
@@ -80,6 +79,7 @@ opciones_dolar = {
     "tarjeta": "Dólar Tarjeta",
     "cripto": "Dólar Cripto"
 }
+#chosen = st.radio("Seleccionar Dolar", ("blue", "mayorista", "oficial", "contadoconliqui", "bolsa", "tarjeta", "cripto"), horizontal=True, key="sorting_hat_radio")
 
 # Crear el radio button utilizando los nuevos nombres
 chosen = st.radio("Seleccionar Dolar", tuple(opciones_dolar.values()), horizontal=True, key="sorting_hat_radio")
