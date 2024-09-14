@@ -79,11 +79,11 @@ opciones_dolar = {
 chosen = st.radio("Seleccionar Dolar", tuple(opciones_dolar.values()), horizontal=True, key="sorting_hat_radio")
 
 # Obtener el valor original (clave) a partir del valor seleccionado (valor)
-chosen = [clave for clave, valor in opciones_dolar.items() if valor == chosen][0]
+chosen_key = [clave for clave, valor in opciones_dolar.items() if valor == chosen][0]
 
 with st.spinner("Fetching data..."):
     dolar = dolar(new_start_date, new_end_date)
   
-fig = px.line(dolar, x='fecha', y=chosen)
+fig = px.line(dolar, x='fecha', y=chosen_key)
 fig.update_layout(title=dict(text=f'Dolar {chosen} - {new_start_date}/{new_end_date}',x=0.5,xanchor='center',font=dict(color="black", size=14)))
 st.plotly_chart(fig)
