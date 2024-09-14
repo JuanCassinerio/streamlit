@@ -96,7 +96,7 @@ fig.update_layout(
         title="[$]",  # Setting the y-axis title as [$]
         title_standoff=20,  # Adjusts the distance between the title and the axis
         titlefont=dict(size=12),  # Set font size for better visibility
-        tickprefix='$',
+        tickprefix='$',),
     xaxis_title=None,   # Removing x-axis title
 )
 
