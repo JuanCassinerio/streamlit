@@ -61,7 +61,7 @@ st.markdown("Para mas informacion ir a <a href='https://juancassinerio.wixsite.c
 chosen ='contadoconliqui'
 start_date0 = pd.to_datetime("2024-01-03").date()
 end_date=date.today()
-start_date1 = pd.to_datetime("2024-05-01").date()
+start_date1 = end_date - timedelta(days=30 * 4)  #4 months
 
 
 new_start_date, new_end_date = st.slider("Fecha",start_date0, end_date,  (start_date1, end_date))
