@@ -85,5 +85,8 @@ with st.spinner("Fetching data..."):
     dolar = dolar(new_start_date, new_end_date)
   
 fig = px.line(dolar, x='fecha', y=chosen_key)
-fig.update_layout(title=dict(text=f'Dolar {chosen} - {new_start_date}/{new_end_date}',x=0.5,xanchor='center',font=dict(color="black", size=14)))
+fig.update_layout(title=dict(text=f'Dolar {chosen} - {new_start_date}/{new_end_date}',x=0.5,xanchor='center',font=dict(color="black", size=14))
+                 ,
+    yaxis_title="[$]",  # Setting the y-axis title as [$]
+    xaxis_title=None,   # Removing x-axis title)
 st.plotly_chart(fig)
