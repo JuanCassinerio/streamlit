@@ -99,7 +99,7 @@ fig.update_layout(
 # Rotating the y-axis title horizontally (by setting angle to 0)
 fig.update_yaxes(
     tickformat="$",  # Add the dollar symbol to labels
-    ticksuffix="$"  # Alternatively, add the symbol as a suffix
+      # Alternatively, add the symbol as a suffix
 )
 
 st.plotly_chart(fig)
