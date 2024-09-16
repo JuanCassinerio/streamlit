@@ -92,7 +92,7 @@ fig.update_layout(
         xanchor='center', 
         font=dict(color="black", size=14)
     ),
-    
+    yaxis_title="[$]",  # Setting the y-axis title as [$]
     xaxis_title=None,  # Removing x-axis title
 )
 
