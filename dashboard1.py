@@ -97,6 +97,6 @@ fig.update_layout(
 )
 
 # Rotating the y-axis title horizontally (by setting angle to 0)
-fig.update_yaxes(title_text="[$]", title_font=dict(size=14), title_angle=0)
+fig.update_yaxes(title_angle=0)
 st.plotly_chart(fig)
 
