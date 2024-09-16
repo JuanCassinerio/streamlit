@@ -92,11 +92,15 @@ fig.update_layout(
         xanchor='center', 
         font=dict(color="black", size=14)
     ),
-    yaxis_title="[$]",  # Setting the y-axis title as [$]
+    yaxis_title=None,  # Setting the y-axis title as [$]
     xaxis_title=None,  # Removing x-axis title
 )
 
 # Rotating the y-axis title horizontally (by setting angle to 0)
-fig.update_yaxes(title_angle=0)
+fig.update_yaxes(
+    tickformat="$",  # Add the dollar symbol to labels
+    ticksuffix="$"  # Alternatively, add the symbol as a suffix
+)
+
 st.plotly_chart(fig)
 
