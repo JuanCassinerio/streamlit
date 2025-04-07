@@ -24,8 +24,13 @@ background: rgba(0,0,0,0);
 </style>
 """
 
-st.markdown(page_bg_img, unsafe_allow_html=True)
-
+#st.markdown(page_bg_img, unsafe_allow_html=True)
+st.markdown("""<style>
+body {
+    color: #fff;
+    background-color: #4F8BF9;
+}</style>
+""", unsafe_allow_html=True)
 st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
 st.markdown("Cotizacion en Hivo e Historica (Fuentes: dolarapi.com / argentinadatos.com)", unsafe_allow_html=True)
 
