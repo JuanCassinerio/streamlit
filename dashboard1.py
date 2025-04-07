@@ -10,24 +10,14 @@ from functions import dolar
 #GUI
 # Custom CSS for wider layout and background color
 st.markdown("""
-    <style>
-        '''/* Make the app wider */
-        .main {
-            max-width: 90%;
-            padding-left: 5%;
-            padding-right: 5%;
-        }'''
-
-        /* Change background color */
-        body {
+<style>
+        {
             background-color: #ff2d00; /* light gray */
         }
 
-        /* Optional: change sidebar background */
-        .css-1d391kg {  /* Class may change on future Streamlit updates */
-            background-color: #ff2d00 !important;
-        }
-    </style>
+
+</style>
+    
 """, unsafe_allow_html=True)
 
 st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
