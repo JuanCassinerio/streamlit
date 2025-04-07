@@ -31,12 +31,7 @@ body {
     background-color: #4F8BF9;
 }</style>
 """, unsafe_allow_html=True)
-st.set_page_config(
-        page_title="Your Awesome App Title",
 
-        layout="wide",
-
-    )
 pages = ["Home", "Page 1", "Page 2"]
 p_choice = st.sidebar_selectbox("Menu", pages)
 
