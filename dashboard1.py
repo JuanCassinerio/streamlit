@@ -10,7 +10,16 @@ from functions import dolar
 #GUI
 st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
 st.markdown("Cotizacion en Hivo e Historica (Fuentes: dolarapi.com / argentinadatos.com)", unsafe_allow_html=True)
-st.markdown('''<h3 style="color: black; font-size: 15px; font-weight: bold;">Hecho por Juan Cassinerio</h3>'''"Para mas informacion ir a <a href='https://juancassinerio.wixsite.com/finance'>https://juancassinerio.wixsite.com/finance/</a>", unsafe_allow_html=True)
+st.markdown('''
+<h3 style="color: black; font-size: 15px; font-weight: bold;">
+    Hecho por Juan Cassinerio
+</h3>
+<p>Para más información ir a 
+    <a href='https://juancassinerio.wixsite.com/finance' target='_blank'>
+        juancassinerio.wixsite.com/finance
+    </a>
+</p>
+''', unsafe_allow_html=True)
 
 
 
