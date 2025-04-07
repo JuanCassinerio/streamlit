@@ -31,13 +31,14 @@ body {
     background-color: #4F8BF9;
 }</style>
 """, unsafe_allow_html=True)
-
 st.set_page_config(
-    page_title=" Testpage",
-    page_icon=":shark",  # EP: how did they find a symbol?
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
+        page_title="Your Awesome App Title",
+
+        layout="wide",
+
+    )
+pages = ["Home", "Page 1", "Page 2"]
+p_choice = st.sidebar_selectbox("Menu", pages)
 
 st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
 st.markdown("Cotizacion en Hivo e Historica (Fuentes: dolarapi.com / argentinadatos.com)", unsafe_allow_html=True)
