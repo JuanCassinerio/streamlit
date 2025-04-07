@@ -13,7 +13,7 @@ page_bg_img = f"""
 [data-testid="stAppViewContainer"] > .main {{
 /*background-image: url("https://i.postimg.cc/4xgNnkfX/Untitled-design.png");*/
 background-size: cover;
-background-color:#f4f4f4
+
 background-position: center center;
 background-repeat: no-repeat;
 background-attachment: local;
@@ -24,15 +24,15 @@ background: rgba(0,0,0,0);
 </style>
 """
 
-#st.markdown(page_bg_img, unsafe_allow_html=True)
-st.markdown("""
+st.markdown(page_bg_img, unsafe_allow_html=True)
+'''st.markdown("""
     <style>
         .stApp {
             background-color: #4F8BF9;
             color: white;
         }
     </style>
-""", unsafe_allow_html=True)
+""", unsafe_allow_html=True)'''
 
 
 
