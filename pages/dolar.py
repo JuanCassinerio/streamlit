@@ -18,8 +18,7 @@ st.markdown("""
 
 
 
-
-st.markdown(''' < h1> style = "color: green; font-size: 50px; font-weight: bold;" > Dolar Ya < / h1 > ''',unsafe_allow_html=True)
+st.markdown('<h1 style="color: green; font-size: 50px; font-weight: bold;">Dolar Ya</h1>', unsafe_allow_html=True)
 st.markdown("Cotizacion en Hivo e Historica (Fuentes: dolarapi.com / argentinadatos.com)", unsafe_allow_html=True)
 
 st.markdown(
