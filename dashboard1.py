@@ -48,9 +48,7 @@ st.markdown(
             <a href='https://juancassinerio.wixsite.com/finance' target='_blank'>
                 juancassinerio.wixsite.com/finance
             </a>
-        
         </h3>
-        
     </div>
     """,
     unsafe_allow_html=True,
