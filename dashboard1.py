@@ -8,17 +8,22 @@ from datetime import date, timedelta
 from functions import dolar
 
 #GUI
-# Custom CSS for wider layout and background color
-st.markdown("""
+page_bg_img = f"""
 <style>
-        {
-            background-color: #ff2d00; /* light gray */
-        }
-
-
+[data-testid="stAppViewContainer"] > .main {{
+background-image: url("https://i.postimg.cc/4xgNnkfX/Untitled-design.png");
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: local;
+}}
+[data-testid="stHeader"] {{
+background: rgba(0,0,0,0);
+}}
 </style>
-    
-""", unsafe_allow_html=True)
+"""
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
 st.markdown("Cotizacion en Hivo e Historica (Fuentes: dolarapi.com / argentinadatos.com)", unsafe_allow_html=True)
