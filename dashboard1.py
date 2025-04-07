@@ -25,14 +25,6 @@ background: rgba(0,0,0,0);
 """
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
-'''st.markdown("""
-    <style>
-        .stApp {
-            background-color: #4F8BF9;
-            color: white;
-        }
-    </style>
-""", unsafe_allow_html=True)'''
 
 
 
