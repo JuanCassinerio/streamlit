@@ -25,12 +25,15 @@ background: rgba(0,0,0,0);
 """
 
 #st.markdown(page_bg_img, unsafe_allow_html=True)
-st.markdown("""<style>
-body {
-    color: #fff;
-    background-color: #4F8BF9;
-}</style>
+st.markdown("""
+    <style>
+        .stApp {
+            background-color: #4F8BF9;
+            color: white;
+        }
+    </style>
 """, unsafe_allow_html=True)
+
 
 
 st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
@@ -40,13 +43,12 @@ st.markdown(
     """
     <div style="display: flex; align-items: center;">
         <h3 style="color: black; font-size: 15px; font-weight: bold; margin-right: 5px;">
-            Hecho por Juan Cassinerio
-        <span style="font-size: 15px;">
-            Para más información ir a 
+            Hecho por Juan Cassinerio - Para más información ir a 
             <a href='https://juancassinerio.wixsite.com/finance' target='_blank'>
                 juancassinerio.wixsite.com/finance
             </a>
-        </span></h3>
+        
+        </h3>
         
     </div>
     """,
