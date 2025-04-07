@@ -1,3 +1,7 @@
+
+import requests
+import pandas as pd
+
 def dolar(start_date_date, end_date):
     url = "https://api.argentinadatos.com/v1/cotizaciones/dolares"
     headers = {
