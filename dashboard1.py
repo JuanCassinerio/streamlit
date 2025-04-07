@@ -11,12 +11,12 @@ from functions import dolar
 # Custom CSS for wider layout and background color
 st.markdown("""
     <style>
-        /* Make the app wider */
+        '''/* Make the app wider */
         .main {
             max-width: 90%;
             padding-left: 5%;
             padding-right: 5%;
-        }
+        }'''
 
         /* Change background color */
         body {
@@ -25,7 +25,7 @@ st.markdown("""
 
         /* Optional: change sidebar background */
         .css-1d391kg {  /* Class may change on future Streamlit updates */
-            background-color: #e0e0e0 !important;
+            background-color: #ff2d00 !important;
         }
     </style>
 """, unsafe_allow_html=True)
