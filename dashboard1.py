@@ -8,14 +8,14 @@ from datetime import date, timedelta
 from functions import dolar
 
 #GUI
-st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
+st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=False)
 st.markdown("Cotizacion en Hivo e Historica (Fuentes: dolarapi.com / argentinadatos.com)", unsafe_allow_html=True)
 
 st.markdown(
     """
     <div style="display: flex; align-items: center;">
         <h3 style="color: black; font-size: 15px; font-weight: bold; margin-right: 5px;">
-            Hecho por Juan Cassinerio –
+            Hecho por Juan Cassinerio
         </h3>
         <span style="font-size: 15px;">
             Para más información ir a 
