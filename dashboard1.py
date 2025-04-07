@@ -13,6 +13,7 @@ page_bg_img = f"""
 [data-testid="stAppViewContainer"] > .main {{
 background-image: url("https://i.postimg.cc/4xgNnkfX/Untitled-design.png");
 background-size: cover;
+background-color:#f4f4f4
 background-position: center center;
 background-repeat: no-repeat;
 background-attachment: local;
