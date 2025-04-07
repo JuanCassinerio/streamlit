@@ -20,7 +20,7 @@ st.markdown("""
 
         /* Change background color */
         body {
-            background-color: #f4f4f4; /* light gray */
+            background-color: #ffffff; /* light gray */
         }
 
         /* Optional: change sidebar background */
