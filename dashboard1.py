@@ -11,7 +11,7 @@ from functions import dolar
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://i.postimg.cc/4xgNnkfX/Untitled-design.png");
+/*background-image: url("https://i.postimg.cc/4xgNnkfX/Untitled-design.png");*/
 background-size: cover;
 background-color:#f4f4f4
 background-position: center center;
