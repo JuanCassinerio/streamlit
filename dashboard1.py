@@ -32,12 +32,6 @@ body {
 }</style>
 """, unsafe_allow_html=True)
 
-st.set_page_config(
-        page_title="Your Awesome App Title",
-
-        layout="wide",
-
-    )
 
 st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
 st.markdown("Cotizacion en Hivo e Historica (Fuentes: dolarapi.com / argentinadatos.com)", unsafe_allow_html=True)
