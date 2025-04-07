@@ -8,6 +8,28 @@ from datetime import date, timedelta
 from functions import dolar
 
 #GUI
+# Custom CSS for wider layout and background color
+st.markdown("""
+    <style>
+        /* Make the app wider */
+        .main {
+            max-width: 90%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        /* Change background color */
+        body {
+            background-color: #f4f4f4; /* light gray */
+        }
+
+        /* Optional: change sidebar background */
+        .css-1d391kg {  /* Class may change on future Streamlit updates */
+            background-color: #e0e0e0 !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 st.markdown('''<h1 style="color: grey; font-size: 50px; font-weight: bold;">Dolar Ya</h1>''',unsafe_allow_html=True)
 st.markdown("Cotizacion en Hivo e Historica (Fuentes: dolarapi.com / argentinadatos.com)", unsafe_allow_html=True)
 
