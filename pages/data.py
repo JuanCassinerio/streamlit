@@ -45,6 +45,9 @@ with col1:
 
     ticker = custom_ticker.upper() if custom_ticker else selected_ticker
 
+    new_start_datetime = datetime.combine(new_start_date, datetime.min.time())
+    new_end_datetime = datetime.combine(new_end_date, datetime.max.time()).replace(microsecond=0)
+
     # --- Fetch Data ---
     data = price(ticker, new_start_date, new_end_date)
 
