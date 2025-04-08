@@ -1,7 +1,7 @@
 # GUI
 import streamlit as st
 
-st.set_page_config(page_title="Bursatil_Info", page_icon="📉", layout="wide")
+st.set_page_config(page_title="Bursatil_Info", page_icon="📈", layout="wide")
 
 
 #Navegacion
@@ -21,16 +21,23 @@ st.markdown("""
 
 st.sidebar.markdown("# Navegación")
 st.sidebar.page_link("dashboard1.py", label="🏠 Inicio")
-st.sidebar.page_link("pages/data.py", label="🧪 Otro análisis")
-st.sidebar.page_link("pages/dolar.py", label="💸 Dolar Hoy")
-st.sidebar.page_link("pages/dolar.py", label="💸 Otra página")
+st.sidebar.page_link("pages/portfolio.py", label="💰 Mi Portfolio")
+st.sidebar.page_link("pages/dolar.py", label="💲 Dolar Hoy")
+st.sidebar.markdown(" ")
+st.sidebar.page_link("pages/data.py", label="💸 Acciones y Cedears")
+st.sidebar.page_link("pages/data.py", label="🧾 Bonos")
+st.sidebar.page_link("pages/data.py", label="🪙 Crypto")
+
+
+
 
 st.sidebar.markdown("---")  # Optional horizontal line separator
 
 st.sidebar.markdown("## Más")
-st.sidebar.page_link("pages/contact.py", label="📬 Contacto")
+st.sidebar.page_link("pages/contact.py", label="📞 Contacto")
+st.sidebar.page_link("pages/contact.py", label="🧠 Research")
 
-
+##############
 
 st.markdown('''
     <h1 style="font-size: 50px; font-weight: bold;">
@@ -61,7 +68,7 @@ col1, col2, col3 = st.columns([1, 1, 1])
 
 
 with col1:
-    if st.button("📊 Analiza tu Portafolio"):
+    if st.button("📊 Mi Portafolio"):
         st.switch_page("pages/data.py")
     st.markdown("Conoce el rendimiento de tus inveriones, Defini Tu cartera y conoce tu rendimiento Anual Global",
                 unsafe_allow_html=True)

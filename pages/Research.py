@@ -23,6 +23,7 @@ st.sidebar.page_link("pages/data.py", label="🧾 Bonos")
 st.sidebar.page_link("pages/data.py", label="🪙 Crypto")
 
 
+
 st.sidebar.markdown("---")  # Optional horizontal line separator
 
 st.sidebar.markdown("## Más")
