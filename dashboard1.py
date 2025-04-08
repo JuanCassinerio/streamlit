@@ -4,8 +4,14 @@ import streamlit as st
 st.set_page_config(page_title="Dolar Ya", page_icon="💸", layout="centered")
 st.markdown("""
     <style>
-        section[data-testid="stSidebarNav"] > div:first-child {
-            display: none;
+        /* Hide default page navigation */
+        [data-testid="stSidebarNavItems"] {
+            display: none !important;
+        }
+
+        /* Optional: reduce padding where the nav was */
+        [data-testid="stSidebarNav"] > div:nth-child(1) {
+            padding-top: 0rem;
         }
     </style>
 """, unsafe_allow_html=True)
