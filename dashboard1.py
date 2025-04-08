@@ -2,6 +2,9 @@
 import streamlit as st
 
 st.set_page_config(page_title="Bursatil_Info", page_icon="📉", layout="wide")
+
+
+#Navegacion
 st.markdown("""
     <style>
         /* Hide default page navigation */
@@ -15,6 +18,7 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
+
 st.sidebar.markdown("# Navegación")
 st.sidebar.page_link("dashboard1.py", label="🏠 Inicio")
 st.sidebar.page_link("pages/data.py", label="🧪 Otro análisis")
