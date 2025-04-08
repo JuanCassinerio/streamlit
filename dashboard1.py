@@ -31,7 +31,7 @@ st.markdown("Cotización en vivo e histórica (Fuentes: dolarapi.com / argentina
 st.write("---")
 st.write("### Navegación")
 
-col1, col2, col3 = st.columns([2, 1, 1])
+col1, col2, col3 = st.columns([1.5, 1, 1])
 
 
 with col1:
