@@ -1,21 +1,16 @@
 import streamlit as st
-
-
 from datetime import timedelta
 from datetime import date
 import plotly.graph_objects as go
-
-
 import pandas as pd
 
-
-
 from functions import price
+
 #Navegacion
+
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))  # Agrega el directorio raíz al path
-
 from pages.sidebar import render_sidebar
 
 render_sidebar()
@@ -45,11 +40,24 @@ new_start_date, new_end_date = st.slider(
 )
 
 # --- Fetch & Plot Data ---
+# --- Fetch & Plot Data ---
 data = price(ticker, new_start_date, new_end_date)
 
 if data is not None and not data.empty:
-    fig = go.Figure(data=[go.Scatter(x=data.index, y=data['Close'], name=ticker)])
-    fig.update_layout(title=f'{ticker} Stock Price', xaxis_title='Date', yaxis_title='Price')
-    st.plotly_chart(fig)
+    st.write(f"Data columns: {list(data.columns)}")  # Debug: show available columns
+
+    # Try using 'Close', fall back to 'Adj Close' if needed
+    price_column = None
+    for col in ['Close', 'Adj Close', 'close', 'adjclose']:
+        if col in data.columns:
+            price_column = col
+            break
+
+    if price_column:
+        fig = go.Figure(data=[go.Scatter(x=data.index, y=data[price_column], name=ticker)])
+        fig.update_layout(title=f'{ticker} Stock Price', xaxis_title='Date', yaxis_title='Price')
+        st.plotly_chart(fig)
+    else:
+        st.error("❌ No 'Close' or 'Adj Close' column found in data. Check your `price()` function.")
 else:
-    st.write("No data available for the selected date range.")
+    st.warning("⚠️ No data available for the selected date range.")
