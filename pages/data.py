@@ -19,9 +19,17 @@ render_sidebar()
 
 
 # --- Ticker Input ---
-tickers = ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'AMZN']
+tickers = ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'AMZN', '^GSPC']
+
 selected_ticker = st.selectbox("Seleccionar ticker", tickers)
 custom_ticker = st.text_input("...o escribir uno", "")
+# Fallback logic to always have a valid ticker
+if custom_ticker:
+    ticker = custom_ticker.upper()
+elif selected_ticker:
+    ticker = selected_ticker
+else:
+    ticker = "^GSPC"  # Default to S&P 500
 
 # Use the custom ticker if provided
 ticker = custom_ticker.upper() if custom_ticker else selected_ticker
