@@ -1,6 +1,7 @@
 
 import requests
 import pandas as pd
+import yfinance as yf
 
 def dolar(start_date_date, end_date):
     url = "https://api.argentinadatos.com/v1/cotizaciones/dolares"
@@ -56,3 +57,24 @@ def dolar(start_date_date, end_date):
     filtered_df = data[data['fecha'].dt.date >= start_date_date]
     filtered_df = filtered_df[filtered_df['fecha'].dt.date <= end_date]
     return filtered_df
+
+def price(ticker,start_date,end_date):
+
+    '''
+
+
+    -Downloads at ET time zone
+    -HISTORIC STOCKS PRICES (DIVIDEND ACCOUNTED)(adj close)
+    '''
+
+    # start_date=date.today() - pd.DateOffset(years=6), end_date=date.today()
+    price = yf.download(ticker, start=start_date, end=end_date, auto_adjust=False)
+    price.columns = price.columns.droplevel(1)  # Drop the first level (Ticker)
+    price =price.rename_axis(None, axis=1)['Adj Close']
+    price = pd.DataFrame(price)
+    price = price.sort_values(by='Date', ascending=False)
+    price['Date'] = price.index
+    #price['ticker'] = ticker
+    price['Adj Close']=round(price['Adj Close'],2)
+    price = price.reset_index(drop=True)
+    return price

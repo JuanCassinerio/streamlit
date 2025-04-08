@@ -1,62 +1,55 @@
 import streamlit as st
-from yfinance import Ticker
-import warnings
-from datetime import datetime
+
+
+from datetime import timedelta
 from datetime import date
 import plotly.graph_objects as go
 
-with warnings.catch_warnings():
-    warnings.simplefilter("ignore")
 
+import pandas as pd
+
+
+
+from functions import price
 #Navegacion
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parent.parent))  # Agrega el directorio raíz al path
 
 from pages.sidebar import render_sidebar
+
 render_sidebar()
 
 ##############
 
-def fetch_aapl_data(start_date, end_date):
-    aapl = Ticker("AAPL")  # Create a Ticker object for AAPL
-    # Download historical data (adjust period as needed)
-    data = aapl.history(start=start_date, end=end_date)
-    return data
 
+# --- Ticker Input ---
+tickers = ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'AMZN']
+selected_ticker = st.selectbox("Seleccionar ticker", tickers)
+custom_ticker = st.text_input("...o escribir uno", "")
 
-# Initial date range (you can customize these)
-today = date.today().strftime("%Y-%m-%d")
+# Use the custom ticker if provided
+ticker = custom_ticker.upper() if custom_ticker else selected_ticker
 
-# Initial date range (you can customize these)
-start_date = "2024-01-01"
-end_date = today
+# --- Time Range Slider ---
+start_date0 = pd.to_datetime("2024-01-03").date()
+end_date = date.today()
+start_date1 = end_date - timedelta(days=30 * 3)
 
-# Create a sidebar for user input
-st.sidebar.title("Date Filter")
-date_format = "%Y-%m-%d"  # Adjust format if needed
-start_date_obj = datetime.strptime(start_date, date_format)
-end_date_obj = datetime.strptime(end_date, date_format)
-new_start_date = st.sidebar.date_input("Start Date", value=start_date_obj)
-new_end_date = st.sidebar.date_input("End Date", value=end_date_obj)
+new_start_date, new_end_date = st.slider(
+    "Seleccionar rango de fechas",
+    min_value=start_date0,
+    max_value=end_date,
+    value=(start_date1, end_date),
+    format="YYYY-MM-DD"
+)
 
-data = None  # Initialize data as None
-# Button to apply changes and refetch data
-if st.sidebar.button("Apply deherChanges"):
-    # Update data based on user input
-    start_date = new_start_date
-    end_date = new_end_date
-    data = fetch_aapl_data(start_date, end_date)  # Refetch data
+# --- Fetch & Plot Data ---
+data = price(ticker, new_start_date, new_end_date)
 
-# Display the title and descriptive text
-st.title("My Online Dashboard")
-st.write("This dashboard displays information about Apple (AAPL) stock.")
-
-# Display the fetched data (assuming data is a pandas DataFrame)
-if data is not None:
-    # Create a Plotly figure
-    fig = go.Figure(data=[go.Scatter(x=data.index, y=data['Close'])])
-    fig.update_layout(title='AAPL Stock Price', xaxis_title='Date', yaxis_title='Price')
-    st.plotly_chart(fig)  # Display the chart
+if data is not None and not data.empty:
+    fig = go.Figure(data=[go.Scatter(x=data.index, y=data['Close'], name=ticker)])
+    fig.update_layout(title=f'{ticker} Stock Price', xaxis_title='Date', yaxis_title='Price')
+    st.plotly_chart(fig)
 else:
     st.write("No data available for the selected date range.")
