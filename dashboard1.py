@@ -29,8 +29,19 @@ st.markdown('''
 ''', unsafe_allow_html=True)
 
 
-st.markdown("Cotización en vivo e histórica (Fuentes: dolarapi.com / argentinadatos.com)", unsafe_allow_html=True)
-
+st.markdown(
+    """
+    <div style="display: flex; align-items: center;">
+        <h3 style="color: black; font-size: 15px; font-weight: bold; margin-right: 5px;">
+            Hecho por Juan Cassinerio - Para más información ir a 
+            <a href='https://juancassinerio.wixsite.com/finance' target='_blank'>
+                juancassinerio.wixsite.com/finance
+            </a>
+        </h3>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 st.write("---")
 st.write("### Navegación")
