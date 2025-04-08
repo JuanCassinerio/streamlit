@@ -17,6 +17,9 @@ render_sidebar()
 
 ##############
 
+st.markdown('<h1 style="color: Black; font-size: 50px; font-weight: bold;">Cedears y Acciones BYMA</h1>', unsafe_allow_html=True)
+st.markdown("En Construccion", unsafe_allow_html=True)
+
 # --- Time Range Setup ---
 start_date0 = pd.to_datetime("2024-01-03").date()
 end_date = date.today()
