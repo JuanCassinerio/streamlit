@@ -67,6 +67,7 @@ def price(ticker,start_date,end_date):
     -HISTORIC STOCKS PRICES (DIVIDEND ACCOUNTED)(adj close)
     '''
 
+
     # start_date=date.today() - pd.DateOffset(years=6), end_date=date.today()
     price = yf.download(ticker, start=start_date, end=end_date, auto_adjust=False)
     price.columns = price.columns.droplevel(1)  # Drop the first level (Ticker)

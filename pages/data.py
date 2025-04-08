@@ -1,6 +1,6 @@
 import streamlit as st
-from datetime import timedelta
-from datetime import datetime
+from datetime import timedelta, time,datetime
+
 import plotly.graph_objects as go
 import pandas as pd
 
@@ -22,7 +22,7 @@ st.markdown("En Construccion", unsafe_allow_html=True)
 
 # --- Time Range Setup ---
 start_date0 = pd.to_datetime("2024-01-03").date()
-end_date = pd.Timestamp(datetime.now())
+end_date = datetime.now().date()
 start_date1 = end_date - timedelta(days=30 * 3)
 
 # --- Layout: Slider on left, Ticker input on right ---
@@ -45,11 +45,9 @@ with col1:
 
     ticker = custom_ticker.upper() if custom_ticker else selected_ticker
 
-    new_start_datetime = datetime.combine(new_start_date, datetime.min.time())
-    new_end_datetime = datetime.combine(new_end_date, datetime.max.time()).replace(microsecond=0)
 
     # --- Fetch Data ---
-    data = price(ticker, new_start_date, new_end_date)
+    data = price(ticker, new_start_date, datetime.combine(new_end_date, time(23, 59, 59)))
 
     # --- Plot ---
     if data is not None and not data.empty:
