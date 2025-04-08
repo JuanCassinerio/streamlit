@@ -42,13 +42,6 @@ st.markdown('<h1 style="color: Black; font-size: 50px; font-weight: bold;">Resea
 st.markdown("Sección con distintos proyectos de investigación. Incluye descripción, enlace a repositorios públicos y ejemplos de código.", unsafe_allow_html=True)
 
 
-# ----------------------
-# Volatilidad Implícita
-# ----------------------
-st.markdown("---")
-st.markdown("### 📊 Volatilidad Implícita")
-st.markdown("Análisis y visualización de superficies de volatilidad en commodities agrícolas.")
-st.markdown("[🔗 Ver repositorio en GitHub](https://github.com/juancassinerio/volatilidad-implicita)")
 
 st.code("""
 import numpy as np
