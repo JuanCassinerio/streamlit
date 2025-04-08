@@ -24,8 +24,7 @@ st.markdown(
     """
     <div style="display: flex; align-items: center;">
         <h3 style="font-size: 20px; margin-right: 5px;">
-            Bienvenido a Bursatil Info – Tu espacio para explorar el mundo de las inversiones de forma clara y accesible. 
-            
+            Bienvenido a Bursatil Info – Tu espacio para explorar el mundo de las inversiones de forma clara y accesible.
             Acá vas a poder gestionar tu portafolio, seguir la cotización del dólar en tiempo real y analizar proyecciones de acciones y CEDEARs. Todo desde un solo lugar, con herramientas pensadas para vos.
         </h3>
     </div>
