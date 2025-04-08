@@ -3,7 +3,7 @@ base = "dark"
 primaryColor = "#0033cc"
 backgroundColor = "#0f1117"
 secondaryBackgroundColor = "#262730"
-textColor = "#ffffff"
+textColor = "#000000"
 font = "sans serif"
 
 [client]
