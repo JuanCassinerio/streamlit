@@ -8,7 +8,6 @@ import plotly.graph_objects as go
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
 
-
 #Navegacion
 st.markdown("""
     <style>
@@ -26,14 +25,22 @@ st.markdown("""
 
 st.sidebar.markdown("# Navegación")
 st.sidebar.page_link("dashboard1.py", label="🏠 Inicio")
-st.sidebar.page_link("pages/data.py", label="🧪 Otro análisis")
-st.sidebar.page_link("pages/dolar.py", label="💸 Dolar Hoy")
-st.sidebar.page_link("pages/dolar.py", label="💸 Otra página")
+st.sidebar.page_link("pages/portfolio.py", label="💰 Mi Portfolio")
+st.sidebar.page_link("pages/dolar.py", label="💲 Dolar Hoy")
+st.sidebar.markdown(" ")
+st.sidebar.page_link("pages/data.py", label="💸 Acciones y Cedears")
+st.sidebar.page_link("pages/data.py", label="🧾 Bonos")
+st.sidebar.page_link("pages/data.py", label="🪙 Crypto")
+
+
 
 st.sidebar.markdown("---")  # Optional horizontal line separator
 
 st.sidebar.markdown("## Más")
-st.sidebar.page_link("pages/contact.py", label="📬 Contacto")
+st.sidebar.page_link("pages/contact.py", label="📞 Contacto")
+st.sidebar.page_link("pages/contact.py", label="🧠 Research")
+
+##############
 
 def fetch_aapl_data(start_date, end_date):
     aapl = Ticker("AAPL")  # Create a Ticker object for AAPL
