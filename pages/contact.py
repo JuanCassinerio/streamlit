@@ -1,4 +1,6 @@
 import streamlit as st
+
+from pathlib import Path
 #Navegacion
 from sidebar import render_sidebar
 render_sidebar()
