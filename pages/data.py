@@ -17,7 +17,7 @@ render_sidebar()
 
 ##############
 
-st.markdown('<h1 style="color: Black; font-size: 50px; font-weight: bold;">Cedears y Acciones BYMA</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style=" font-size: 50px; font-weight: bold;">Cedears y Acciones BYMA</h1>', unsafe_allow_html=True)
 st.markdown("En Construccion", unsafe_allow_html=True)
 
 # --- Time Range Setup ---
