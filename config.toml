@@ -1,12 +1,11 @@
+[theme]
+base = "dark"
+primaryColor = "#0033cc"
+backgroundColor = "#0f1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#ffffff"
+font = "sans serif"
+
 [client]
 showThemeSettings = false
-
-[theme]
-base="dark"
-primaryColor="#0033cc"   #the buttons, bar collor
-backgroundColor="#f0f2f6"
-secondaryBackgroundColor="#ffffff"
-textColor="#ffffff"
-font="sans serif"
-
 
