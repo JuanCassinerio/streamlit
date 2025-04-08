@@ -19,7 +19,7 @@ render_sidebar()
 
 
 
-st.markdown('<h1 style="color: Black; font-size: 50px; font-weight: bold;">Cryto</h1>', unsafe_allow_html=True)
+st.markdown('<h1 style="color: Black; font-size: 50px; font-weight: bold;">Crypto</h1>', unsafe_allow_html=True)
 st.markdown("En Construccion", unsafe_allow_html=True)
 
 
