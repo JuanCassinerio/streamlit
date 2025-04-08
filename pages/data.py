@@ -50,7 +50,7 @@ if data is not None and not data.empty:
     price_column = None
     for col in ['Date','Close', 'Adj Close', 'close', 'adjclose']:
         if col in data.columns:
-            price_column = col
+            price_column = 'Adj Close'
             break
 
     if price_column:
