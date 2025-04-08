@@ -17,44 +17,36 @@ render_sidebar()
 
 ##############
 
-
-# --- Ticker Input ---
-tickers = ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'AMZN', '^GSPC']
-
-selected_ticker = st.selectbox("Seleccionar ticker", tickers)
-custom_ticker = st.text_input("...o escribir uno", "")
-# Fallback logic to always have a valid ticker
-if custom_ticker:
-    ticker = custom_ticker.upper()
-elif selected_ticker:
-    ticker = selected_ticker
-else:
-    ticker = "^GSPC"  # Default to S&P 500
-
-# Use the custom ticker if provided
-ticker = custom_ticker.upper() if custom_ticker else selected_ticker
-
-# --- Time Range Slider ---
+# --- Time Range Setup ---
 start_date0 = pd.to_datetime("2024-01-03").date()
 end_date = date.today()
 start_date1 = end_date - timedelta(days=30 * 3)
 
-new_start_date, new_end_date = st.slider(
-    "Seleccionar rango de fechas",
-    min_value=start_date0,
-    max_value=end_date,
-    value=(start_date1, end_date),
-    format="YYYY-MM-DD"
-)
+# --- Layout: Slider on left, Ticker input on right ---
+col1, col2 = st.columns([2, 1])
 
-# --- Fetch & Plot Data ---
-# --- Fetch & Plot Data ---
+with col1:
+    new_start_date, new_end_date = st.slider(
+        "Seleccionar rango de fechas",
+        min_value=start_date0,
+        max_value=end_date,
+        value=(start_date1, end_date),
+        format="YYYY-MM-DD"
+    )
+
+with col2:
+    tickers = ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'AMZN', '^GSPC']
+    selected_ticker = st.selectbox("Ticker", tickers)
+    custom_ticker = st.text_input("...o escribir uno", "")
+    # Fallback logic
+    ticker = custom_ticker.upper() if custom_ticker else selected_ticker
+
+# --- Fetch Data ---
 data = price(ticker, new_start_date, new_end_date)
 
+# --- Plot ---
 if data is not None and not data.empty:
-    st.write(f"Data columns: {list(data.columns)}")  # Debug: show available columns
-
-    # Try using 'Close', fall back to 'Adj Close' if needed
+    # Use Close or Adj Close
     price_column = None
     for col in ['Close', 'Adj Close', 'close', 'adjclose']:
         if col in data.columns:
@@ -63,9 +55,14 @@ if data is not None and not data.empty:
 
     if price_column:
         fig = go.Figure(data=[go.Scatter(x=data.index, y=data[price_column], name=ticker)])
-        fig.update_layout(title=f'{ticker} Stock Price', xaxis_title='Date', yaxis_title='Price')
-        st.plotly_chart(fig)
+        fig.update_layout(
+            title=f'{ticker} Stock Price',
+            xaxis_title='Date',
+            yaxis_title='Price',
+            height=500
+        )
+        st.plotly_chart(fig, use_container_width=True)
     else:
-        st.error("❌ No 'Close' or 'Adj Close' column found in data. Check your `price()` function.")
+        st.error("❌ No 'Close' or 'Adj Close' column found in data.")
 else:
-    st.warning("⚠️ No data available for the selected date range.")
+    st.warning("⚠️ No data available for the selected date range or ticker.")
