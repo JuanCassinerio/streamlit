@@ -2,7 +2,30 @@
 import streamlit as st
 
 st.set_page_config(page_title="Bursatil_Info", page_icon="📈", layout="wide")
-
+# Estilo CSS personalizado
+st.markdown("""
+    <style>
+        .title-style {
+            font-size: 48px;
+            font-weight: 800;
+            color: #0033cc;
+        }
+        .subtitle-style {
+            font-size: 20px;
+            color: #333333;
+        }
+        .highlight {
+            color: #ffa500;
+        }
+        .info-box {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 #Navegacion
 import sys
