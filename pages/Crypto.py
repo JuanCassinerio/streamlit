@@ -1,3 +1,4 @@
+import streamlit as st
 #Navegacion
 st.markdown("""
     <style>
@@ -30,3 +31,6 @@ st.sidebar.page_link("pages/contact.py", label="📞 Contacto")
 st.sidebar.page_link("pages/contact.py", label="🧠 Research")
 
 ##############
+
+st.markdown('<h1 style="color: Black; font-size: 50px; font-weight: bold;">Mi Portfolio</h1>', unsafe_allow_html=True)
+st.markdown("En Construccion", unsafe_allow_html=True)
