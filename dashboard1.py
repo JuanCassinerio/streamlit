@@ -7,7 +7,6 @@ st.set_page_config(page_title="Bursatil_Info", page_icon="📈", layout="wide")
 #Navegacion
 from pages.sidebar import render_sidebar
 render_sidebar()
-
 ##############
 
 st.markdown('''
