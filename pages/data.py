@@ -25,6 +25,12 @@ start_date1 = end_date - timedelta(days=30 * 3)
 # --- Layout: Slider on left, Ticker input on right ---
 col1, col2 = st.columns([3, 1])
 
+with col2:
+    tickers = ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'AMZN', '^GSPC']
+    selected_ticker = st.selectbox("Ticker", tickers)
+    custom_ticker = st.text_input("...o escribir uno", "")
+    # Fallback logic
+
 with col1:
     new_start_date, new_end_date = st.slider(
         "Seleccionar rango de fechas",
@@ -33,13 +39,8 @@ with col1:
         value=(start_date1, end_date),
         format="YYYY-MM-DD"
     )
-with col2:
-    tickers = ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'AMZN', '^GSPC']
-    selected_ticker = st.selectbox("Ticker", tickers)
-    custom_ticker = st.text_input("...o escribir uno", "")
-    # Fallback logic
-    ticker = custom_ticker.upper() if custom_ticker else selected_ticker
 
+    ticker = custom_ticker.upper() if custom_ticker else selected_ticker
 
     # --- Fetch Data ---
     data = price(ticker, new_start_date, new_end_date)
@@ -58,3 +59,4 @@ with col2:
 
     else:
         st.warning("⚠️ No data available for the selected date range or ticker.")
+
