@@ -1,6 +1,6 @@
 [theme]
-base="light"
-primaryColor="#0033cc"
+base="dark"
+primaryColor="#0033cc"   #the buttons, bar collor
 backgroundColor="#f0f2f6"
 secondaryBackgroundColor="#ffffff"
 textColor="#000000"
