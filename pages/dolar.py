@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 from datetime import date, timedelta
 
-# streamlit run "C:/Users/Usuario/Desktop/Scripts/Nueva carpeta/dark box/st.py" ""to deal with folders with spaces
+# .streamlit run "C:/Users/Usuario/Desktop/Scripts/Nueva carpeta/dark box/st.py" ""to deal with folders with spaces
 
 from functions import dolar
 
