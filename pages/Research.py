@@ -47,6 +47,10 @@ st.markdown("Sección con distintos proyectos de investigación. Incluye descrip
 # ----------------------
 st.markdown("---")
 st.markdown("### 📊 Volatilidad Implícita")
+
+st.markdown("Análisis y visualización de superficies de volatilidad en commodities agrícolas.")
+st.markdown("[🔗 Ver repositorio en GitHub](https://github.com/juancassinerio)")
+
 st.code("""
 import numpy as np
 import matplotlib.pyplot as plt
