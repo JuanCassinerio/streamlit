@@ -42,7 +42,9 @@ st.markdown('<h1 style="color: Black; font-size: 50px; font-weight: bold;">Resea
 st.markdown("Sección con distintos proyectos de investigación. Incluye descripción, enlace a repositorios públicos y ejemplos de código.", unsafe_allow_html=True)
 
 
-
+# ----------------------
+# Volatilidad Implícita
+# ----------------------
 st.code("""
 import numpy as np
 import matplotlib.pyplot as plt
@@ -53,5 +55,7 @@ plt.plot(K, vol * np.ones_like(K))
 plt.title("Curva de Volatilidad Implícita")
 plt.show()
 """, language="python")
+
+
 
 
