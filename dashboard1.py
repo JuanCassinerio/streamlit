@@ -2,7 +2,13 @@
 import streamlit as st
 
 st.set_page_config(page_title="Dolar Ya", page_icon="💸", layout="centered")
-
+st.markdown("""
+    <style>
+        section[data-testid="stSidebarNav"] > div:first-child {
+            display: none;
+        }
+    </style>
+""", unsafe_allow_html=True)
 st.sidebar.markdown("# Navegación")
 st.sidebar.page_link("dashboard1.py", label="🏠 Inicio")
 st.sidebar.page_link("pages/data.py", label="🧪 Otro análisis")
