@@ -1,5 +1,5 @@
 import streamlit as st
-from datetime import timedelta
+from datetime import timedelta, time,datetime
 from datetime import date
 import plotly.graph_objects as go
 import pandas as pd
@@ -50,7 +50,7 @@ with col1:
     ticker = custom_ticker.upper() if custom_ticker else selected_ticker
 
     # --- Fetch Data ---
-    data = price(ticker, new_start_date, new_end_date)
+    data = price(ticker, new_start_date, datetime.combine(new_end_date, time(23, 59, 59)))
 
     # --- Plot ---
     if data is not None and not data.empty:
