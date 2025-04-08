@@ -36,7 +36,7 @@ st.sidebar.page_link("pages/Research.py", label="🧠 Research")
 ##############
 
 
-st.set_page_config(page_title="Research", page_icon="📚", layout="wide")
+
 
 st.markdown('<h1 style="color: Black; font-size: 50px; font-weight: bold;">Research</h1>', unsafe_allow_html=True)
 st.markdown("Sección con distintos proyectos de investigación. Incluye descripción, enlace a repositorios públicos y ejemplos de código.", unsafe_allow_html=True)
