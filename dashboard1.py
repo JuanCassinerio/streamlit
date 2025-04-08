@@ -1,8 +1,12 @@
 # GUI
 import streamlit as st
 
-#st.set_page_config(page_title="Bursatil_Info", page_icon="📈", layout="wide")
-
+st.set_page_config(
+    page_title="Bursatil Info",
+    page_icon="📈",
+    layout="wide",  # <- Esto activa el modo ancho
+    initial_sidebar_state="expanded"
+)
 
 #Navegacion
 import sys
