@@ -1,7 +1,7 @@
 # GUI
 import streamlit as st
 
-st.set_page_config(page_title="Dolar Ya", page_icon="💸", layout="centered")
+st.set_page_config(page_title="Dolar Ya", page_icon="💸", layout="wide")
 st.markdown("""
     <style>
         /* Hide default page navigation */
@@ -30,12 +30,12 @@ st.markdown("Cotización en vivo e histórica (Fuentes: dolarapi.com / argentina
 st.write("---")
 st.write("### Navegación")
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3 = st.columns([2, 1, 1])
 
 with col1:
     if st.button("🏠 Inicio"):
         st.switch_page("dashboard1.py")
-        st.markdown("Cotización en vivo e histórica (Fuentes: dolarapi.com / argentinadatos.com)",
+    st.markdown("Cotización en vivo e histórica (Fuentes: dolarapi.com / argentinadatos.com)",
                     unsafe_allow_html=True)
 
 with col2:
