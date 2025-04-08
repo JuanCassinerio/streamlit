@@ -5,6 +5,10 @@ st.set_page_config(page_title="Bursatil_Info", page_icon="📈", layout="wide")
 
 
 #Navegacion
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))  # Agrega el directorio raíz al path
+
 from pages.sidebar import render_sidebar
 render_sidebar()
 ##############

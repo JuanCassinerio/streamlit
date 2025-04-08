@@ -2,7 +2,11 @@ import streamlit as st
 
 from pathlib import Path
 #Navegacion
-from sidebar import render_sidebar
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parent.parent))  # Agrega el directorio raíz al path
+
+from pages.sidebar import render_sidebar
 render_sidebar()
 ##############
 
