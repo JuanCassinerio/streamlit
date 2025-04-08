@@ -2,61 +2,9 @@
 import streamlit as st
 
 st.set_page_config(page_title="Bursatil_Info", page_icon="📈", layout="wide")
-# Estilo CSS personalizado
-st.markdown("""
-    <style>
-        /* Fondo degradado */
-        body {
-            background: linear-gradient(135deg, #f0f2f6 0%, #d9e4f5 100%) !important;
-            font-family: 'Segoe UI', sans-serif;
-        }
 
-        /* Estilo general del contenedor */
-        .main {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
-        }
-
-        /* Título principal */
-        .title-style {
-            font-size: 52px;
-            font-weight: 900;
-            color: #0033cc;
-            margin-bottom: 0px;
-        }
-
-        /* Subrayado y color destacado */
-        .highlight {
-            color: #ffa500;
-        }
-
-        /* Subtítulo */
-        .subtitle-style {
-            font-size: 20px;
-            color: #333;
-            margin-bottom: 40px;
-        }
-
-        /* Caja de info tipo tarjeta */
-        .info-box {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 2px 2px 12px rgba(0,0,0,0.07);
-            transition: transform 0.2s ease;
-        }
-
-        .info-box:hover {
-            transform: scale(1.02);
-            box-shadow: 2px 2px 16px rgba(0,0,0,0.15);
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-# Contenido principal
-st.markdown('<div class="main">', unsafe_allow_html=True)
+[theme]
+base="light"
 
 #Navegacion
 import sys
