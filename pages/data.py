@@ -46,23 +46,15 @@ data = price(ticker, new_start_date, new_end_date)
 
 # --- Plot ---
 if data is not None and not data.empty:
-    # Use Close or Adj Close
-    price_column = None
-    for col in ['Date','Close', 'Adj Close', 'close', 'adjclose']:
-        if col in data.columns:
-            price_column = 'Adj Close'
-            break
 
-    if price_column:
-        fig = go.Figure(data=[go.Scatter(x=data['Date'], y=data[price_column], name=ticker)])
-        fig.update_layout(
-            title=f'{ticker} Stock Price',
-            xaxis_title='Date',
-            yaxis_title='Price',
-            height=500
-        )
-        st.plotly_chart(fig, use_container_width=True)
-    else:
-        st.error("❌ No 'Close' or 'Adj Close' column found in data.")
+    fig = go.Figure(data=[go.Scatter(x=data['Date'], y=data['Adj Close'], name=ticker)])
+    fig.update_layout(
+        title=f'{ticker} Stock Price',
+        xaxis_title='Date',
+        yaxis_title='Price',
+        height=500
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
 else:
     st.warning("⚠️ No data available for the selected date range or ticker.")
