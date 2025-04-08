@@ -11,10 +11,9 @@ st.markdown('<h1 style="color: Black; font-size: 50px; font-weight: bold;">Conta
 col1, col2 = st.columns([1, 2])  # col1 más angosta para la imagen, col2 para el texto
 
 with col1:
-    import os
+    from pathlib import Path
 
-
-    image_path = os.path.join(os.path.dirname(__file__), "..", "images", "picture.jpg")
+    image_path = Path(__file__).parent.parent / "images" / "picture.jpg"
     with open(image_path, "rb") as img_file:
         st.image(img_file.read(), width=200)
 
