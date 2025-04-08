@@ -57,7 +57,7 @@ with col1:
 
         fig = go.Figure(data=[go.Scatter(x=data['Date'], y=data['Adj Close'], name=ticker)])
         fig.update_layout(
-            title=f'{ticker} Stock Price',
+            title=f'{ticker}',
             xaxis_title='Date',
             yaxis_title='Price',
             height=500

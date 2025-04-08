@@ -20,8 +20,8 @@ def render_sidebar():
 
     st.sidebar.markdown(" ")
     st.sidebar.page_link("pages/data.py", label="💸 Acciones y Cedears")
-    st.sidebar.page_link("pages/data.py", label="🧾 Bonos")
-    st.sidebar.page_link("pages/data.py", label="🪙 Crypto")
+    st.sidebar.page_link("pages/Bonos.py", label="🧾 Bonos")
+    st.sidebar.page_link("pages/Crypto.py", label="🪙 Crypto")
 
     st.sidebar.markdown("---")
     st.sidebar.markdown("## Más")
