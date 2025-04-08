@@ -39,7 +39,8 @@ st.markdown('<h1 style="color: Black; font-size: 50px; font-weight: bold;">Conta
 col1, col2 = st.columns([1, 2])  # col1 más angosta para la imagen, col2 para el texto
 
 with col1:
-    st.image("images/picture.jpg", width=200)
+    st.image("../images/picture.jpg", width=200)
+
 
 with col2:
     st.markdown("""
