@@ -45,6 +45,8 @@ st.markdown("Sección con distintos proyectos de investigación. Incluye descrip
 # ----------------------
 # Volatilidad Implícita
 # ----------------------
+st.markdown("---")
+st.markdown("### 📊 Volatilidad Implícita")
 st.code("""
 import numpy as np
 import matplotlib.pyplot as plt
@@ -55,6 +57,9 @@ plt.plot(K, vol * np.ones_like(K))
 plt.title("Curva de Volatilidad Implícita")
 plt.show()
 """, language="python")
+
+
+
 
 
 
