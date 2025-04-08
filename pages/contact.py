@@ -13,8 +13,10 @@ col1, col2 = st.columns([1, 2])  # col1 más angosta para la imagen, col2 para e
 with col1:
     import os
 
+
     image_path = os.path.join(os.path.dirname(__file__), "..", "images", "picture.jpg")
-    st.image(image_path, width=200)
+    with open(image_path, "rb") as img_file:
+        st.image(img_file.read(), width=200)
 
 with col2:
     st.markdown("""
