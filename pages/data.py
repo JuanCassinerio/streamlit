@@ -48,13 +48,13 @@ data = price(ticker, new_start_date, new_end_date)
 if data is not None and not data.empty:
     # Use Close or Adj Close
     price_column = None
-    for col in ['Close', 'Adj Close', 'close', 'adjclose']:
+    for col in ['Date','Close', 'Adj Close', 'close', 'adjclose']:
         if col in data.columns:
             price_column = col
             break
 
     if price_column:
-        fig = go.Figure(data=[go.Scatter(x=data.index, y=data[price_column], name=ticker)])
+        fig = go.Figure(data=[go.Scatter(x=data['Date'], y=data[price_column], name=ticker)])
         fig.update_layout(
             title=f'{ticker} Stock Price',
             xaxis_title='Date',
