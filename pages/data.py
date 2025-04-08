@@ -23,7 +23,7 @@ end_date = date.today()
 start_date1 = end_date - timedelta(days=30 * 3)
 
 # --- Layout: Slider on left, Ticker input on right ---
-col1, col2 = st.columns([3, 1])
+col1, col2 = st.columns([5, 1])
 
 with col2:
     tickers = ['AAPL', 'GOOGL', 'MSFT', 'TSLA', 'AMZN', '^GSPC']
