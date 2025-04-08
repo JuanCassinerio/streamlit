@@ -21,6 +21,13 @@ st.sidebar.page_link("pages/data.py", label="🧪 Otro análisis")
 st.sidebar.page_link("pages/dolar.py", label="💸 Dolar Hoy")
 st.sidebar.page_link("pages/dolar.py", label="💸 Otra página")
 
+st.sidebar.markdown("---")  # Optional horizontal line separator
+
+st.sidebar.markdown("## Más")
+st.sidebar.page_link("pages/about.py", label="ℹ️ Acerca de")
+st.sidebar.page_link("pages/contact.py", label="📬 Contacto")
+st.sidebar.page_link("https://juancassinerio.wixsite.com/finance", label="🌐 Mi Web", icon="🔗")
+
 st.markdown('''
     <h1 style="font-size: 50px; font-weight: bold;">
         <span style="color: blue;">Bursatil</span>
