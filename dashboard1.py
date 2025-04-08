@@ -15,5 +15,21 @@ st.markdown('''
 st.markdown("Cotización en vivo e histórica (Fuentes: dolarapi.com / argentinadatos.com)", unsafe_allow_html=True)
 
 
+st.write("---")
+st.write("### Navegación")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    if st.button("🏠 Inicio"):
+        st.switch_page("dashboard1.py")
+
+with col2:
+    if st.button("🧪 Otro análisis"):
+        st.switch_page("pages/data.py")
+
+with col3:
+    if st.button("📊 Otra página"):
+        st.switch_page("pages/dolar.py")
 
 
