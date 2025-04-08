@@ -29,7 +29,7 @@ st.sidebar.markdown("---")  # Optional horizontal line separator
 
 st.sidebar.markdown("## Más")
 st.sidebar.page_link("pages/contact.py", label="📞 Contacto")
-st.sidebar.page_link("pages/contact.py", label="🧠 Research")
+st.sidebar.page_link("pages/Research.py", label="🧠 Research")
 
 ##############
 

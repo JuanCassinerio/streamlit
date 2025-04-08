@@ -26,7 +26,7 @@ st.sidebar.page_link("pages/dolar.py", label="💲 Dolar Hoy")
 st.sidebar.markdown(" ")
 st.sidebar.page_link("pages/data.py", label="💸 Acciones y Cedears")
 st.sidebar.page_link("pages/data.py", label="🧾 Bonos")
-st.sidebar.page_link("pages/data.py", label="🪙 Crypto")
+st.sidebar.page_link("pages/Research.py", label="🪙 Crypto")
 
 
 
