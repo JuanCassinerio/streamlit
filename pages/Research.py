@@ -31,6 +31,12 @@ st.sidebar.markdown("## Más")
 st.sidebar.page_link("pages/contact.py", label="📞 Contacto")
 st.sidebar.page_link("pages/Research.py", label="🧠 Research")
 
+'''
+
+link a github
+
+'''
+
 ##############
 
 st.markdown('<h1 style="color: Black; font-size: 50px; font-weight: bold;">Mi Portfolio</h1>', unsafe_allow_html=True)
