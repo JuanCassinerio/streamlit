@@ -54,3 +54,8 @@ fig.update_yaxes(tickformat="$")
 
 st.plotly_chart(fig)
 
+
+
+
+# + inflaion acumulada tipo slider desde  hasta
+

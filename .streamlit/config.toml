@@ -1,9 +1,9 @@
 [theme]
 base = "dark"
-primaryColor = "#0033cc"
-backgroundColor = "#0f1117"
-secondaryBackgroundColor = "#262730"
-textColor = "#ffffff"
+primaryColor = "#00ccff"  # bright cyan/blue
+backgroundColor = "#0a0f1c"  # deep navy-blue
+secondaryBackgroundColor = "#1a2238"  # bluish shadow
+textColor = "#d8faff"  # soft neon blue
 font = "sans serif"
 
 [client]
