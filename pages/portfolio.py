@@ -14,96 +14,112 @@ st.markdown("En Construccion", unsafe_allow_html=True)
 '''
 import streamlit as st
 
-# Theme settings (as provided)
-st.set_page_config(page_title="Frutiger Aero Inspired App", layout="wide")
+st.set_page_config(page_title="Frutiger Aero App", layout="wide")
 
+# Custom CSS for Frutiger Aero style
 st.markdown(
     """
     <style>
     body {
-        background-color: #0f1117;
-        color: #ffffff;
+        background: linear-gradient(to bottom, #87CEEB, #4682B4); /* Blue gradient background */
+        color: white;
         font-family: sans-serif;
     }
 
     .stApp {
-        background-color: #0f1117;
+        background: transparent; /* Make Streamlit app background transparent */
     }
 
     .st-emotion-cache-16txtl3 { /* Main container */
-        background-color: #262730;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adding a subtle shadow */
-        background-image: linear-gradient(to bottom, #262730, #1a1b22); /* Subtle gradient for depth */
+        background: rgba(255, 255, 255, 0.1); /* Glass effect background */
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        backdrop-filter: blur(10px); /* Blur for glass effect */
     }
 
     .stButton>button {
-        background-color: #0033cc;
+        background: linear-gradient(to bottom, #87CEEB, #4682B4); /* Blue gradient button */
         color: white;
         border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+        padding: 15px 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow */
+        transition: background-color 0.3s ease;
     }
 
     .stButton>button:hover {
-        background-color: #002299;
+        background: linear-gradient(to bottom, #4682B4, #87CEEB); /* Reverse gradient on hover */
     }
 
     .stTextInput>div>div>input, .stNumberInput>div>div>input, .stSelectbox>div>div>div>input {
-        background-color: #333333;
+        background: rgba(255, 255, 255, 0.2); /* Slightly transparent input background */
         color: white;
-        border: 1px solid #555555;
-        border-radius: 5px;
-        padding: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        padding: 10px;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .stTextInput>div>div>input:focus, .stNumberInput>div>div>input:focus, .stSelectbox>div>div>div>input:focus {
-        border-color: #0033cc;
-        box-shadow: 0 0 5px rgba(0, 51, 204, 0.5);
+        border-color: #87CEEB;
+        box-shadow: 0 0 5px rgba(135, 206, 235, 0.5);
     }
 
-    /* Add a subtle glass effect to elements */
-    .glass-effect {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+    .bubble-image { /* Style for the circular image */
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: url('https://placekitten.com/200/200'); /* Replace with your image URL */
+        background-size: cover;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        margin: 20px auto; /* Center the image */
     }
-    .st-emotion-cache-10trblm{
-        background-color: rgba(255, 255, 255, 0.05); /* very light semi transparent white*/
-        border-radius: 5px;
+
+    .search-bar { /* Style for the search bar */
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
         padding: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
     }
 
-    /* Add a subtle inner shadow to input elements */
-    .stTextInput>div>div>input, .stNumberInput>div>div>input, .stSelectbox>div>div>div>input{
-        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    .search-bar input[type="text"] {
+        background: transparent;
+        border: none;
+        color: white;
+        flex-grow: 1;
+        padding: 5px;
     }
+
+    .search-bar button {
+        background: rgba(255, 255, 255, 0.3);
+        border: none;
+        border-radius: 20px;
+        padding: 8px 15px;
+        color: white;
+    }
+
     </style>
     """,
     unsafe_allow_html=True,
 )
 
-# Example content
-st.title("Frutiger Aero Inspired Interface")
+# Content of the app
+st.title("Frutiger Aero App")
 
-st.markdown("Welcome to the futuristic interface!")
+st.markdown("Experience the awesome Frutiger Aero aesthetic!")
+
+st.markdown("<div class='search-bar'><input type='text' placeholder='Search...' /><button>Search</button></div>", unsafe_allow_html=True)
+
+st.markdown("<div class='bubble-image'></div>", unsafe_allow_html=True)
 
 name = st.text_input("Enter your name:")
 age = st.number_input("Enter your age:", min_value=0, step=1)
-option = st.selectbox("Select an option:", ["Option 1", "Option 2", "Option 3"])
-
 if st.button("Submit"):
-    st.write(f"Name: {name}")
-    st.write(f"Age: {age}")
-    st.write(f"Selected option: {option}")
+    st.write(f"Name: {name}, Age: {age}")
 
-st.markdown("---")
-
-st.markdown("Some more content with a subtle glass effect:")
-st.markdown("<div class='glass-effect'>This is a glass-effect element.</div>", unsafe_allow_html=True)
-
-st.markdown("More stylized sections")
-st.markdown("<div class='st-emotion-cache-10trblm'> This is a section with a slightly different background</div>", unsafe_allow_html=True)
+st.markdown("Download the Frutiger Aero Pack:")
+st.button("Download Pack")
