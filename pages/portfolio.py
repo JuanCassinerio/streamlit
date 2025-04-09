@@ -14,7 +14,7 @@ st.markdown("En Construccion", unsafe_allow_html=True)
 '''
 import streamlit as st
 
-st.set_page_config(page_title="Frutiger Aero App", layout="wide")
+'''st.set_page_config(page_title="Frutiger Aero App", layout="wide")
 
 # Custom CSS for Frutiger Aero style
 st.markdown(
@@ -123,3 +123,30 @@ if st.button("Submit"):
 
 st.markdown("Download the Frutiger Aero Pack:")
 st.button("Download Pack")
+'''
+
+st.markdown("""
+    <style>
+    /* Apply a glassy background to the main content */
+    .main {
+        background: rgba(10, 15, 28, 0.8);
+        backdrop-filter: blur(8px);
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 0 20px #00ccff55;
+    }
+
+    /* Button style */
+    .stButton > button {
+        background: linear-gradient(145deg, #00ccff, #00ffcc);
+        color: black;
+        border-radius: 12px;
+        border: none;
+    }
+
+    /* Make headings glow slightly */
+    h1, h2, h3, h4 {
+        text-shadow: 0 0 8px #00ccff;
+    }
+    </style>
+""", unsafe_allow_html=True)
